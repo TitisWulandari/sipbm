@@ -1,13 +1,13 @@
 <!-- DataTales Example -->
 <button type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#formDataKoleksi">
     <i class="fas fa-plus"></i>
-    Tambah Data Koleksi
+    Tambah Data Jenis Koleksi
 </button>
 <p><?php echo $this->session->flashdata('success'); ?></p>
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">List Data Koleksi</h6>
+        <h6 class="m-0 font-weight-bold text-primary">List Data Jenis Koleksi</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -88,7 +88,7 @@
                 <div class="modal-body">
                     <form action="" method="POST">
                         <div class="form-group">
-                            <label for="nama">Nama Koleksi</label>
+                            <label for="nama">Nama Jenis Koleksi</label>
                             <input disabled type="text" name="nama_jenis_koleksi" value="<?= $data->nama_jenis_koleksi; ?>" class="form-control" id="nama_jenis_koleksi">
                         </div>
 
@@ -132,7 +132,7 @@
                 <div class="modal-body">
                     <form action="<?= base_url('koleksi/jenis_koleksi/update') ?>" method="POST">
                         <div class="form-group">
-                            <label for="nama">Nama Koleksi</label>
+                            <label for="nama">Nama Jenis Koleksi</label>
                             <input type="text" name="nama_jenis_koleksi" value="<?= $data->nama_jenis_koleksi; ?>" class="form-control" id="nama_jenis_koleksi">
                             <input type="text" hidden value="<?= $users['id_users'] ?>" class="form-control" name="id_users">
                             <input type="text" hidden value="<?= $data->id_jenis_koleksi ?>" class="form-control" name="id_jenis_koleksi">

@@ -25,7 +25,8 @@
                         <th>Nama ruang koleksi</th>
                         <th>Bahan</th>
                         <th>Keadaan koleksi</th>
-                        <th>No. vitrin</th>
+                        <th>No.vitrin</th>
+						<th>Jumlah Koleksi</th>
                         <!-- <th>Tanggal observasi</th> -->
                         <th>Rekomendasi</th>
                         <th>Aksi</th>
@@ -42,6 +43,7 @@
                             <td><?= $data->bahan_observasi_koleksi; ?></td>
                             <td><?= $data->keadaan_observasi_koleksi; ?></td>
                             <td><?= $data->no_vitrin_observasi_koleksi; ?></td>
+							<td><?= $data->jumlah_koleksi; ?></td>
                             <!-- <td><?= $data->time_observasi; ?></td> -->
                             <td><?= $data->rekomendasi_observasi_koleksi; ?></td>
                             <td>
@@ -170,6 +172,11 @@
                             <label for="password">No vitrin</label>
                             <input type="text" name="no_vitrin_observasi_koleksi" value="<?= $data->no_vitrin_observasi_koleksi; ?>" class="form-control" id="password" placeholder="Masukan password user">
                         </div>
+						
+						<div class="form-group">
+                            <label for="password">Jumlah Koleksi</label>
+                            <input type="text" name="jumlah_koleksi" value="<?= $data->jumlah_koleksi; ?>" class="form-control" id="password" placeholder="Masukan password user">
+                        </div>
 
                         <div class="form-group">
                             <label for="password">Waktu Observasi</label>
@@ -255,7 +262,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="time_create_observasi">Tanggal Observasi : <?= $dataob->time_observasi; ?></label>
+                                <label for="time_create_observasi">Tanggal Observasi</label>
                                 <input type="datetime-local" class="form-control" value="<?= $dataob->time_observasi; ?>" name="time_observasi">
                             </div>
 

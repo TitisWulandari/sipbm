@@ -23,7 +23,7 @@
                         <input type="text" class="form-control" id="email" name="email" value="<?= $users["email"]; ?>" readonly>
                     </div>
                     <div class="form-group">
-                        <label for="telepon_users">Telepon Users</label>
+                        <label for="telepon_users">Telepon</label>
                         <input type="text" class="form-control" id="telepon_users" name="telepon_users" value="<?= $users["telepon_users"]; ?>">
                         <?= form_error('telepon_users', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>

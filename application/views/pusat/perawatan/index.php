@@ -29,6 +29,7 @@
                         <th>Kegiatan</th>
                         <th>Bahan yang digunakan</th>
                         <th>Tambahan</th>
+						<th>Status</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -44,7 +45,15 @@
                             <td><?= $per["kegiatan_perawatan"]; ?></td>
                             <td><?= $per["bahan_perawatan"]; ?></td>
                             <td><?= $per["tambahan_perawatan"]; ?></td>
-
+							<td>
+                                <?php if ($per['validasi_perawatan'] == "belum") { ?>
+                                    <a style="color: whitesmoke;" class="badge badge-secondary">Waiting</a>
+                                <?php } elseif ($per['validasi_perawatan'] == "waiting") { ?>
+                                    <a style="color: whitesmoke;" class="badge badge-warning">Please Aprove</a>
+                                <?php } elseif ($per['validasi_perawatan'] == "sudah") { ?>
+                                    <a style="color: whitesmoke;" class="badge badge-success">Finish</a>
+                                <?php } ?>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

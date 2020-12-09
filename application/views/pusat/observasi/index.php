@@ -17,18 +17,7 @@
                         <th>Rekomendasi</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama Koleksi</th>
-                        <th>Nama ruang koleksi</th>
-                        <th>Bahan</th>
-                        <th>Keadaan koleksi</th>
-                        <th>No. vitrin</th>
-                        <!-- <th>Tanggal observasi</th> -->
-                        <th>Rekomendasi</th>
-                    </tr>
-                </tfoot>
+            
                 <tbody>
                     <?php $no = 1;
                     foreach ($observasi as $data) : ?>
@@ -185,7 +174,6 @@
                 </form>
             </div>
         </div>
-    </div>
     </div>
 <?php endforeach ?>
 <!-- end Modal Detail Users -->
