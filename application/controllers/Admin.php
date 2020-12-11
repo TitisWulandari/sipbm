@@ -371,6 +371,7 @@ class Admin extends CI_Controller
         ];
         $data['users'] = $this->db->get_where('tbl_users', ['email' =>
         $this->session->userdata('email')])->row_array();
+        $data['observasi'] = $this->Observasi_model->getAll();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar');
         $this->load->view('templates/topbar');
@@ -480,6 +481,7 @@ class Admin extends CI_Controller
         $data = [
             'title' => 'Admin | Laporan Perawatan',
             'users' => $this->db->get_where('tbl_users', ['email' => $this->session->userdata('email')])->row_array(),
+            'perawatan' => $this->Perawatan_model->getAllBelumPerawatan()
         ];
         $data['users'] = $this->db->get_where('tbl_users', ['email' =>
         $this->session->userdata('email')])->row_array();
