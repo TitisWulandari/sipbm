@@ -16,22 +16,10 @@
                         <th>Kegiatan</th>
                         <th>Bahan yang digunakan</th>
                         <th>Tambahan</th>
-                    </tr>
-                </thead>
-                <tfoot>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama petugas</th>
-                        <th>Nama koleksi</th>
-                        <th>Keadaan koleksi</th>
-                        <th>No. vitrin</th>
-                        <th>Tanggal perawatan</th>
-                        <th>Kegiatan</th>
-                        <th>Bahan yang digunakan</th>
-                        <th>Tambahan</th>
 						<th>Status</th>
                     </tr>
-                </tfoot>
+                </thead>
+                
                 <tbody>
                     <?php $no = 1; ?>
                     <?php foreach ($perawatan as $per) : ?>

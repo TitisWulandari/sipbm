@@ -48,7 +48,7 @@
                         <th>Bahan yang digunakan</th>
                         <th>Tambahan</th>
                         <th>Status</th>
-                        <th>Aksi</th>
+                    
                     </tr>
                 </thead>
 

@@ -44,7 +44,7 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="<?= base_url('koleksi/koleksi') ?>">Data Koleksi</a>
-                <a class="collapse-item jenis_koleksi" href="<?= base_url('koleksi/jenis_koleksi') ?>">Jenis _koleksi</a>
+                <a class="collapse-item jenis_koleksi" href="<?= base_url('koleksi/jenis_koleksi') ?>">Jenis Koleksi</a>
             </div>
         </div>
     </li>

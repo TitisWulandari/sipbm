@@ -19,7 +19,7 @@
             
             <p class="mt-5 mb-5"><?= $about["deskripsi_museum"]; ?></p>
         </div>
-        <a href="<?= base_url('admin/update_about/' . $about["id_about_museum"]); ?>" class="btn btn-primary mb-4" style="width: 200px;">Update About</a>
+        <a href="<?= base_url('admin/update_about/' . $about["id_about_museum"]); ?>" class="btn btn-primary mb-4" style="width: 200px;">Update Beranda</a>
     </div>
     <?php endforeach; ?>
 </div>
