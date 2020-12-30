@@ -98,7 +98,7 @@
 
             </div>
 
-            <form action="<?= base_url('koleksi/koleksi/doTambahBerita') ?>" enctype="multipart/form-data" method="POST">
+            <form action="<?= base_url('petugas/pemeriksaan/pemeriksaan/doTambahBerita') ?>" enctype="multipart/form-data" method="POST">
 
                 <div class="modal-body">
 
@@ -136,11 +136,11 @@
 
                     <div class="form-group">
 
-                        <label for="gambar_koleksi">Bukti Kerusakan</label>
+                        <label for="gambar_kerusakan">Bukti Kerusakan</label>
 
                         <div class="custom-file">
 
-                            <input type="file" class="custom-file-input" id="gambar_koleksi" name="gambar_koleksi" required>
+                            <input type="file" class="custom-file-input" id="gambar_kerusakan" name="gambar_kerusakan" required>
 
                             <label class="custom-file-label" for="customFile">Choose file</label>
 

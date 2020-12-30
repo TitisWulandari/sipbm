@@ -1,14 +1,14 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Koleksi_model extends CI_Model
+class Pemeriksaan_model extends CI_Model
 {
 
     public function getAll()
     {
         $this->db->select('*');
         $this->db->from('tbl_koleksi');
-        // $this->db->join('tbl_ruang_koleksi', 'tbl_ruang_koleksi.id_ruang_koleksi = tbl_koleksi.id_ruang_koleksi');
+        $this->db->join('tbl_ruang_koleksi', 'tbl_ruang_koleksi.id_ruang_koleksi = tbl_koleksi.id_ruang_koleksi');
         $this->db->join('tbl_users', 'tbl_users.id_users = tbl_koleksi.id_users');
         $this->db->order_by('id_koleksi', 'DESC');
 
@@ -55,7 +55,7 @@ class Koleksi_model extends CI_Model
 
     public function insert($data)
     {
-        $this->db->insert('tbl_koleksi', $data);
+        $this->db->insert('tbl_pemeriksaan', $data);
 
         if ($this->db->affected_rows() > 0)
             return true;

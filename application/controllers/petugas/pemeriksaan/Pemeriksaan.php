@@ -121,7 +121,7 @@ class Pemeriksaan extends CI_Controller
             $this->load->library('upload', $config);
 
             //PROSES UPLOAD IMAGE
-            if (!$this->upload->do_upload('gambar_koleksi')) {
+            if (!$this->upload->do_upload('gambar_kerusakan')) {
                 $data['errors']     = $this->upload->display_errors();
                 print_r($data);
             } else {
@@ -155,7 +155,7 @@ class Pemeriksaan extends CI_Controller
                     'gambar_kerusakan'        => $upload_data['uploads']['file_name']
                 );
 
-                $this->Kol_model->insert($data);
+                $this->Pemeriksaan_model->insert($data);
 
                 $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Sukses, Data user berhasil ditambahkan !</div>');
 
