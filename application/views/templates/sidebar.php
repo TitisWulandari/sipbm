@@ -136,14 +136,6 @@
     </li>
     <!-- end petugas perawatan -->
 	
-	<!-- area petugas perawatan -->
-    <li class="nav-item petugas">
-        <a class="nav-link pb-0" href="<?= base_url('petugas/petugas_pemeriksaan/pemeriksaan') ?>">
-            <i class="fas fa-fw fa-cogs"></i>
-            <span>Pemeriksaan</span>
-        </a>
-    </li>
-    <!-- end petugas perawatan -->
 
     <!-- start area pihak pusat -->
     <li class="nav-item pusat">
