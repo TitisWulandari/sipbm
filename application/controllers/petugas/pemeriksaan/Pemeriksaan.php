@@ -38,6 +38,7 @@ class Pemeriksaan extends CI_Controller
         $data['koleksi'] = $this->Koleksi_model->getAll();
         $data['ruang'] = $this->Ruang_koleksi_model->getAll();
         $data['observasi'] = $this->Observasi_model->getAll();
+        $data['jenis'] = $this->Jenis_koleksi_model->getAll();
         // $isi = $this->db->join('tbl_users', 'tbl_users.id_users =tbl_perawatan.id_users')->get_where('tbl_perawatan', ['tbl_perawatan.id_users' => $data['users']['id_users']])->result_array();
         //$data['perawatan'] = $isi;
         // validations

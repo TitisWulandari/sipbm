@@ -88,7 +88,7 @@
 
             <div class="modal-header">
 
-                <h5 class="modal-title" id="formDataKoleksiLabel">Form Tambah Data Koleksi</h5>
+                <h5 class="modal-title" id="formDataKoleksiLabel">Form Pemeriksaan Kerusakan</h5>
 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 
@@ -140,13 +140,11 @@
 
                     </div>
 
-
-
                     <div class="form-group">
 
-                        <label for="panjang_koleksi">Panjang</label>
+                        <label for="koleksi_tahun">Kondisi</label>
 
-                        <input type="text" class="form-control" id="panjang_koleksi" name="panjang_koleksi" required>
+                        <textarea class="form-control" name="kondisi_kerusakan" id="kondisi_kerusakan" rows="3" required></textarea>
 
                     </div>
 
@@ -154,37 +152,7 @@
 
                     <div class="form-group">
 
-                        <label for="lebar_koleksi">Lebar</label>
-
-                        <input type="text" class="form-control" id="lebar_koleksi" name="lebar_koleksi" required>
-
-                    </div>
-
-
-
-                    <div class="form-group">
-
-                        <label for="berat_koleksi">Berat</label>
-
-                        <input type="text" class="form-control" id="berat_koleksi" name="berat_koleksi" required>
-
-                    </div>
-
-
-
-                    <div class="form-group">
-
-                        <label for="koleksi_tahun">Koleksi Tahun</label>
-
-                        <input type="text" class="form-control" id="tahun_koleksi" name="tahun_koleksi" required>
-
-                    </div>
-
-
-
-                    <div class="form-group">
-
-                        <label for="gambar_koleksi">Foto Koleksi</label>
+                        <label for="gambar_koleksi">Bukti Kerusakan</label>
 
                         <div class="custom-file">
 
