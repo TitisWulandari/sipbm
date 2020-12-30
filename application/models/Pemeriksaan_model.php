@@ -7,10 +7,12 @@ class Pemeriksaan_model extends CI_Model
     public function getAll()
     {
         $this->db->select('*');
-        $this->db->from('tbl_koleksi');
-        $this->db->join('tbl_ruang_koleksi', 'tbl_ruang_koleksi.id_ruang_koleksi = tbl_koleksi.id_ruang_koleksi');
-        $this->db->join('tbl_users', 'tbl_users.id_users = tbl_koleksi.id_users');
-        $this->db->order_by('id_koleksi', 'DESC');
+        $this->db->from('tbl_pemeriksaan');
+        $this->db->join('tbl_koleksi', 'tbl_koleksi.id_koleksi = tbl_pemeriksaan.id_koleksi');
+        $this->db->join('tbl_ruang_koleksi', 'tbl_ruang_koleksi.id_ruang_koleksi = tbl_pemeriksaan.id_ruang_koleksi');
+        $this->db->join('tbl_users', 'tbl_users.id_users = tbl_pemeriksaan.id_users');
+        $this->db->where('tbl_pemeriksaan.id_users', $this->session->userdata('id_users'));
+        $this->db->order_by('id_pemeriksaan', 'DESC');
 
         $result = $this->db->get();
 
