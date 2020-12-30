@@ -38,7 +38,6 @@ class Pemeriksaan extends CI_Controller
         $data['koleksi'] = $this->Koleksi_model->getAll();
         $data['ruang'] = $this->Ruang_koleksi_model->getAll();
         $data['observasi'] = $this->Observasi_model->getAll();
-        $data['jenis'] = $this->Jenis_koleksi_model->getAll();
         // $isi = $this->db->join('tbl_users', 'tbl_users.id_users =tbl_perawatan.id_users')->get_where('tbl_perawatan', ['tbl_perawatan.id_users' => $data['users']['id_users']])->result_array();
         //$data['perawatan'] = $isi;
         // validations
@@ -102,47 +101,20 @@ class Pemeriksaan extends CI_Controller
 
     public function doTambahBerita()
     {
-        $this->form_validation->set_rules(
-            'nama_koleksi',
-            'nama koleksi',
-            'required',
-            array('required' => 'Nama Koleksi Harus di Isi')
-        );
 
         $this->form_validation->set_rules(
-            'panjang_koleksi',
-            'Panjang Koleksi',
+            'kondisi_kerusakan',
+            'kondisi kerusakan',
             'required',
             'required',
-            array('required' => 'Panjang Koleksi Harus di Isi')
-        );
-        $this->form_validation->set_rules(
-            'lebar_koleksi',
-            'Lebar Koleksi',
-            'required',
-            'required',
-            array('required' => 'Lebar Koleksi Harus di Isi')
-        );
-        $this->form_validation->set_rules(
-            'berat_koleksi',
-            'Berat Koleksi',
-            'required',
-            'required',
-            array('required' => 'Berat Koleksi Harus di Isi')
-        );
-        $this->form_validation->set_rules(
-            'tahun_koleksi',
-            'Tahun Koleksi',
-            'required',
-            'required',
-            array('required' => 'Tahun Koleksi Harus di Isi')
+            array('required' => ' kondisi kerusakan Harus di Isi')
         );
 
         if ($this->form_validation->run() ===  FALSE) {
             $this->doTambahBerita();
         } else {
             //CONFIGURASI UPLOAD IMAGE
-            $config['upload_path']         = './assets/upload/post';
+            $config['upload_path']         = './assets/upload/pemeriksaan';
             $config['allowed_types']     = 'jpg|png|svg|jpeg';
             $config['max_size']         = '12000';
 
@@ -157,8 +129,8 @@ class Pemeriksaan extends CI_Controller
                 $upload_data                = array('uploads' => $this->upload->data());
                 // Image Editor
                 $config['image_library']    = 'gd2';
-                $config['source_image']     = './assets/upload/post/' . $upload_data['uploads']['file_name'];
-                $config['new_image']         = './assets/upload/post/thumbs/';
+                $config['source_image']     = './assets/upload/pemeriksaan/' . $upload_data['uploads']['file_name'];
+                $config['new_image']         = './assets/upload/pemeriksaan/thumbs/';
                 $config['create_thumb']     = TRUE;
                 $config['quality']             = "100%";
                 $config['max_size'] = '100M';
@@ -174,19 +146,16 @@ class Pemeriksaan extends CI_Controller
                 //$slug = url_title($this->input->post('judul_post'), 'dash', TRUE);
                 //date_default_timezone_set("ASIA/JAKARTA");
                 $data = array(
-                    'nama_koleksi'         => $this->input->post('nama_koleksi'),
-                    //'slug_post'        => $slug,
-                    'id_jenis_koleksi'    => $this->input->post('id_jenis_koleksi'),
-                    'panjang_koleksi'        => $this->input->post('panjang_koleksi'),
-                    'lebar_koleksi'        => $this->input->post('lebar_koleksi'),
-                    'berat_koleksi'        => $this->input->post('berat_koleksi'),
-                    'tahun_koleksi'        => $this->input->post('tahun_koleksi'),
-                    'time_create_koleksi'    => date('Y-m-d H:i:s'),
-                    'gambar_koleksi'        => $upload_data['uploads']['file_name'],
-                    'id_users'        => $this->input->post('id_users')
+                    'id_koleksi'    => $this->input->post('id_koleksi'),
+                    'id_ruang_koleksi'    => $this->input->post('id_ruang_koleksi'),
+                    'kondisi_kerusakan'    => $this->input->post('kondisi_kerusakan'),
+                    'status_pemeriksaan'    => '1',
+                    'id_users'    => $this->session->userdata('id_users'),
+                    'time_pemeriksaan'    => date('Y-m-d H:i:s'),
+                    'gambar_kerusakan'        => $upload_data['uploads']['file_name']
                 );
 
-                $this->Koleksi_model->insert($data);
+                $this->Kol_model->insert($data);
 
                 $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Sukses, Data user berhasil ditambahkan !</div>');
 

@@ -126,22 +126,6 @@
 
                     <div class="form-group">
 
-                        <label for="jenis_koleksi">Jenis Koleksi</label>
-
-                        <select name="id_jenis_koleksi" class="form-control" required>
-
-                            <?php foreach ($jenis as $id_jenis) : ?>
-
-                                <option value="<?= $id_jenis->id_jenis_koleksi ?>"><?= $id_jenis->nama_jenis_koleksi ?></option>
-
-                            <?php endforeach ?>
-
-                        </select>
-
-                    </div>
-
-                    <div class="form-group">
-
                         <label for="koleksi_tahun">Kondisi</label>
 
                         <textarea class="form-control" name="kondisi_kerusakan" id="kondisi_kerusakan" rows="3" required></textarea>
