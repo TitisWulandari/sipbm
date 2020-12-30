@@ -6,13 +6,6 @@
 
 <!-- DataTales Example -->
 
-<button type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#formDataKoleksi">
-
-    <i class="fas fa-plus"></i>
-
-    Pemeriksaan
-
-</button>
 
 <p><?php echo $this->session->flashdata('success'); ?></p>
 
@@ -47,8 +40,8 @@
                             <td>
                                 <div class="btn-group" role="group">
                                     <?php if ($per->status_pemeriksaan == "1") { ?>
-                                        <a style="color: white;" class="badge badge-danger ">
-                                            Sudah dilaporkan
+                                        <a href="<?= base_url('admin/updateStatusPemeriksaan/' . $per->id_pemeriksaan); ?>" style="color: white;" class="badge badge-danger ">
+                                            Perlu Validasi
                                         </a>
                                     <?php } elseif ($per->status_pemeriksaan == "2") { ?>
                                         <a style="color: white;" class="badge badge-success">

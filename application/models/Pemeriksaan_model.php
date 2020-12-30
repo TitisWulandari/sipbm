@@ -18,6 +18,19 @@ class Pemeriksaan_model extends CI_Model
 
         return $result->result();
     }
+    public function getAllAdmin()
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_pemeriksaan');
+        $this->db->join('tbl_koleksi', 'tbl_koleksi.id_koleksi = tbl_pemeriksaan.id_koleksi');
+        $this->db->join('tbl_ruang_koleksi', 'tbl_ruang_koleksi.id_ruang_koleksi = tbl_pemeriksaan.id_ruang_koleksi');
+        $this->db->join('tbl_users', 'tbl_users.id_users = tbl_pemeriksaan.id_users');
+        $this->db->order_by('id_pemeriksaan', 'DESC');
+
+        $result = $this->db->get();
+
+        return $result->result();
+    }
     public function listberita()
     {
         $this->db->select('*');
@@ -100,5 +113,21 @@ class Pemeriksaan_model extends CI_Model
     function tampilberita($id_post)
     {
         return $this->db->get_where('tbl_post', array('id_post' => $id_post));
+    }
+    public function getPById($id)
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_pemeriksaan');
+        $this->db->where('id_pemeriksaan', $id);
+
+        $result = $this->db->get();
+
+        return $result->row();
+    }
+
+    public function updateData($id, $data)
+    {
+        $this->db->where('id_pemeriksaan', $id);
+        $this->db->update('tbl_pemeriksaan', $data);
     }
 }

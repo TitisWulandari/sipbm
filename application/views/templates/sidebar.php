@@ -119,6 +119,12 @@
             <span>Perawatan</span>
         </a>
     </li>
+    <li class="nav-item admin">
+        <a class="nav-link pb-0" href="<?= base_url('admin/pemeriksaan') ?>">
+            <i class="fas fa-fw fa-cogs"></i>
+            <span>Pemeriksaan</span>
+        </a>
+    </li>
     <!-- end area admin -->
 
     <!-- area petugas perawatan -->
