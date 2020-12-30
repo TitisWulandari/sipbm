@@ -24,7 +24,7 @@ class Koleksi extends CI_Controller
         ];
         $data['users'] = $this->db->get_where('tbl_users', ['email' =>
         $this->session->userdata('email')])->row_array();
-        $data['jenis'] = $this->Jenis_koleksi_model->getAll();
+        $data['ruang'] = $this->Ruang_koleksi_model->getAll();
         $data['koleksi'] = $this->Koleksi_model->getAll();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar');
@@ -120,7 +120,7 @@ class Koleksi extends CI_Controller
                 $data = array(
                     'nama_koleksi'         => $this->input->post('nama_koleksi'),
                     //'slug_post'        => $slug,
-                    'id_jenis_koleksi'    => $this->input->post('id_jenis_koleksi'),
+                   
                     'panjang_koleksi'        => $this->input->post('panjang_koleksi'),
                     'lebar_koleksi'        => $this->input->post('lebar_koleksi'),
                     'berat_koleksi'        => $this->input->post('berat_koleksi'),
@@ -196,7 +196,7 @@ class Koleksi extends CI_Controller
 
     {
         $nama_koleksi = $this->input->post('nama_koleksi');
-        $id_jenis_koleksi = $this->input->post('id_jenis_koleksi');
+      
         $panjang_koleksi = $this->input->post('panjang_koleksi');
         $lebar_koleksi = $this->input->post('lebar_koleksi');
         $berat_koleksi = $this->input->post('berat_koleksi');
@@ -207,7 +207,7 @@ class Koleksi extends CI_Controller
 
         $data = [
             'nama_koleksi' => $nama_koleksi,
-            'id_jenis_koleksi' => $id_jenis_koleksi,
+          
             'panjang_koleksi' => $panjang_koleksi,
             'lebar_koleksi' => $lebar_koleksi,
             'berat_koleksi' => $berat_koleksi,
@@ -228,7 +228,7 @@ class Koleksi extends CI_Controller
     public function updatekoleksssi()
     {
         $this->form_validation->set_rules('nama_koleksi', 'nama koleksi', 'required');
-        $this->form_validation->set_rules('id_jenis_koleksi', 'jenis koleksi', 'required');
+       
         $this->form_validation->set_rules('panjang_koleksi', 'panjang koleksi', 'required');
         if ($this->form_validation->run() == FALSE) {
             $errors = $this->form_validation->error_array();
@@ -237,7 +237,7 @@ class Koleksi extends CI_Controller
             redirect('Admin');
         } else {
             $nama_koleksi = $this->input->post('nama_koleksi');
-            $id_jenis_koleksi = $this->input->post('id_jenis_koleksi');
+            
             $id = $this->input->post('id_koleksi');
             $panjang_koleksi = $this->input->post('panjang_koleksi');
             $lebar_koleksi = $this->input->post('lebar_koleksi');
@@ -247,7 +247,7 @@ class Koleksi extends CI_Controller
             //date_default_timezone_set("ASIA/JAKARTA");
             $data = [
                 'nama_koleksi' => $nama_koleksi,
-                'id_jenis_koleksi' => $id_jenis_koleksi,
+                
                 'panjang_koleksi' => $panjang_koleksi,
                 'lebar_koleksi' => $lebar_koleksi,
                 'berat_koleksi' => $berat_koleksi,

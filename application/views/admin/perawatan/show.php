@@ -22,16 +22,7 @@
                 <td>:</td>
                 <td><?= $perawatan["nama_koleksi"] ?></td>
             </tr>
-            <tr>
-                <td><b>Keadaan Koleksi</b></td>
-                <td>:</td>
-                <td><?= $perawatan["keadaan_koleksi_perawatan"] ?></td>
-            </tr>
-            <tr>
-                <td><b>No. vitrin</b></td>
-                <td>:</td>
-                <td><?= $perawatan["no_vitrin_koleksi_perawatan"] ?></td>
-            </tr>
+           
             <tr>
                 <td><b>Tangal Perawatan</b></td>
                 <td>:</td>
@@ -43,15 +34,11 @@
                 <td><?= $perawatan["kegiatan_perawatan"] ?></td>
             </tr>
             <tr>
-                <td><b>Bahan yang digunakan</b></td>
+                <td><b>Penanggung jawab</b></td>
                 <td>:</td>
-                <td><?= $perawatan["bahan_perawatan"] ?></td>
+                <td><?= $perawatan["penanggung_perawatan"] ?></td>
             </tr>
-            <tr>
-                <td><b>Tambahan</b></td>
-                <td>:</td>
-                <td><?= $perawatan["tambahan_perawatan"] ?></td>
-            </tr>
+           
         </table>
 
         <div class="row justify-content-center mt-4 mb-4">

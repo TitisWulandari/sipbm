@@ -38,12 +38,11 @@ class Perawatan extends CI_Controller
         // $isi = $this->db->join('tbl_users', 'tbl_users.id_users =tbl_perawatan.id_users')->get_where('tbl_perawatan', ['tbl_perawatan.id_users' => $data['users']['id_users']])->result_array();
         //$data['perawatan'] = $isi;
         // validations
-        $this->form_validation->set_rules('keadaan_koleksi_perawatan', 'keadaan koleksi perawatan', 'required');
-        $this->form_validation->set_rules('no_vitrin_koleksi_perawatan', 'no vitrin', 'required');
+        
         $this->form_validation->set_rules('time_perawatan', 'tanggal perawatan', 'required');
         $this->form_validation->set_rules('kegiatan_perawatan', 'kegiatan perawatan', 'required');
-        $this->form_validation->set_rules('bahan_perawatan', 'bahan', 'required');
-        $this->form_validation->set_rules('tambahan_perawatan', 'tambahan', 'required');
+        $this->form_validation->set_rules('penanggung_perawatan', 'penanggung', 'required');
+        
 
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);
@@ -75,12 +74,10 @@ class Perawatan extends CI_Controller
             'perawatan' => $this->db->get_where('tbl_perawatan', ['id_perawatan' => $id])->row_array()
         ];
 
-        $this->form_validation->set_rules('keadaan_koleksi_perawatan', 'keadaan koleksi perawatan', 'required');
-        $this->form_validation->set_rules('no_vitrin_koleksi_perawatan', 'no vitrin', 'required');
         $this->form_validation->set_rules('time_perawatan', 'tanggal perawatan', 'required');
         $this->form_validation->set_rules('kegiatan_perawatan', 'kegiatan perawatan', 'required');
-        $this->form_validation->set_rules('bahan_perawatan', 'bahan', 'required');
-        $this->form_validation->set_rules('tambahan_perawatan', 'tambahan', 'required');
+        $this->form_validation->set_rules('penanggung_perawatan', 'penanggung', 'required');
+       
 
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);

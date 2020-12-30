@@ -41,12 +41,9 @@
                         <th>No</th>
                         <th>Nama petugas</th>
                         <th>Nama koleksi</th>
-                        <th>Keadaan koleksi</th>
-                        <th>No. vitrin</th>
                         <th>Tanggal perawatan</th>
                         <th>Kegiatan</th>
-                        <th>Bahan yang digunakan</th>
-                        <th>Tambahan</th>
+                        <th>Penanggung jawab</th>
                         <th>Status</th>
                     
                     </tr>
@@ -59,13 +56,20 @@
                             <td><?= $no++ ?></td>
                             <td><?= $per["name"] ?></td>
                             <td><?= $per["nama_koleksi"]; ?></td>
-                            <td><?= $per["keadaan_koleksi_perawatan"]; ?></td>
-                            <td><?= $per["no_vitrin_koleksi_perawatan"]; ?></td>
                             <td><?= $per["time_perawatan"]; ?></td>
                             <td><?= $per["kegiatan_perawatan"]; ?></td>
-                            <td><?= $per["bahan_perawatan"]; ?></td>
-                            <td><?= $per["tambahan_perawatan"]; ?></td>
-                            <td><?= $per["validasi_perawatan"]; ?></td>
+                            <td><?= $per["penanggung_perawatan"]; ?></td>
+                            
+                            
+							 <td>
+                                <?php if ($per['validasi_perawatan'] == "belum") { ?>
+                                    <a style="color: whitesmoke;" class="badge badge-secondary">Waiting</a>
+                                <?php } elseif ($per['validasi_perawatan'] == "waiting") { ?>
+                                    <a style="color: whitesmoke;" class="badge badge-warning">Please Aprove</a>
+                                <?php } elseif ($per['validasi_perawatan'] == "sudah") { ?>
+                                    <a style="color: whitesmoke;" class="badge badge-success">Finish</a>
+                                <?php } ?>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

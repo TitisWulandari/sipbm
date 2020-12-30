@@ -43,12 +43,9 @@ class Perawatan_model extends CI_Model
         $data = [
             'id_users' => $this->input->post('id_users'),
             'id_koleksi' => $this->input->post('id_koleksi'),
-            'keadaan_koleksi_perawatan' => $this->input->post('keadaan_koleksi_perawatan'),
-            'no_vitrin_koleksi_perawatan' => $this->input->post('no_vitrin_koleksi_perawatan'),
             'time_perawatan' => $this->input->post('time_perawatan'),
             'kegiatan_perawatan' => $this->input->post('kegiatan_perawatan'),
-            'bahan_perawatan' => $this->input->post('bahan_perawatan'),
-            'tambahan_perawatan' => $this->input->post('tambahan_perawatan'),
+            'penanggung_perawatan' => $this->input->post('penanggung_perawatan'),
             'validasi_perawatan' => 'belum',
             'time_create_perawatan' => date("Y-m-d H:i:s"),
             'time_update_perawatan' => date("Y-m-d H:i:s"),
@@ -74,12 +71,10 @@ class Perawatan_model extends CI_Model
         $data = [
             'id_users' => $this->input->post('id_users'),
             'id_koleksi' => $this->input->post('id_koleksi'),
-            'keadaan_koleksi_perawatan' => $this->input->post('keadaan_koleksi_perawatan'),
-            'no_vitrin_koleksi_perawatan' => $this->input->post('no_vitrin_koleksi_perawatan'),
             'time_perawatan' => $this->input->post('time_perawatan'),
             'kegiatan_perawatan' => $this->input->post('kegiatan_perawatan'),
-            'bahan_perawatan' => $this->input->post('bahan_perawatan'),
-            'tambahan_perawatan' => $this->input->post('tambahan_perawatan'),
+            'penanggung_perawatan' => $this->input->post('penanggung_perawatan'),
+            
             'time_update_perawatan' => date("Y-m-d h:i:sa"),
         ];
 
