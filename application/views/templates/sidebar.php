@@ -25,7 +25,7 @@
 
     <!-- Heading -->
     <div class="sidebar-heading tess">
-        DATA MASTER 
+        DATA MASTER
     </div>
 
     <!-- Nav Item - admin area Tables -->
@@ -127,6 +127,12 @@
             <span>Perawatan</span>
         </a>
     </li>
+    <li class="nav-item petugas">
+        <a class="nav-link pb-0" href="<?= base_url('petugas/pemeriksaan/pemeriksaan') ?>">
+            <i class="fas fa-fw fa-cogs"></i>
+            <span>Pemeriksaan</span>
+        </a>
+    </li>
     <!-- end petugas perawatan -->
 
     <!-- start area pihak pusat -->
@@ -167,7 +173,7 @@
             <span>Laporan Observasi</span>
         </a>
     </li>
-    
+
     <li class="nav-item admin">
         <a class="nav-link pb-0" href="<?= base_url('admin/laporan_perawatan') ?>">
             <i class="fas fa-fw fa-file"></i>
@@ -197,9 +203,9 @@
     <!-- Divider -->
     <hr class="sidebar-divider mt-3">
 
-    
 
-	
+
+
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
