@@ -8,7 +8,7 @@ class Koleksi_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('tbl_koleksi');
-        $this->db->join('tbl_jenis_koleksi', 'tbl_jenis_koleksi.id_jenis_koleksi = tbl_koleksi.id_jenis_koleksi');
+        $this->db->join('tbl_ruang_koleksi', 'tbl_ruang_koleksi.id_ruang_koleksi = tbl_koleksi.id_ruang_koleksi');
         $this->db->join('tbl_users', 'tbl_users.id_users = tbl_koleksi.id_users');
         $this->db->order_by('id_koleksi', 'DESC');
 

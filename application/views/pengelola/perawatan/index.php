@@ -10,12 +10,10 @@
                         <th>No</th>
                         <th>Nama petugas</th>
                         <th>Nama koleksi</th>
-                        <th>Keadaan koleksi</th>
-                        <th>No. vitrin</th>
                         <th>Tanggal perawatan</th>
                         <th>Kegiatan</th>
-                        <th>Bahan yang digunakan</th>
-                        <th>Tambahan</th>
+                        <th>Penanggung jawab</th>
+                        
 						<th>Status</th>
                     </tr>
                 </thead>
@@ -27,12 +25,10 @@
                             <td><?= $no++ ?></td>
                             <td><?= $per["name"] ?></td>
                             <td><?= $per["nama_koleksi"]; ?></td>
-                            <td><?= $per["keadaan_koleksi_perawatan"]; ?></td>
-                            <td><?= $per["no_vitrin_koleksi_perawatan"]; ?></td>
                             <td><?= $per["time_perawatan"]; ?></td>
                             <td><?= $per["kegiatan_perawatan"]; ?></td>
-                            <td><?= $per["bahan_perawatan"]; ?></td>
-                            <td><?= $per["tambahan_perawatan"]; ?></td>
+                            <td><?= $per["penanggung_perawatan"]; ?></td>
+                            
 							<td>
                                 <?php if ($per['validasi_perawatan'] == "belum") { ?>
                                     <a style="color: whitesmoke;" class="badge badge-secondary">Waiting</a>
@@ -83,18 +79,6 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="keadaan_koleksi_perawatan">Keadaan Koleksi</label>
-                        <input type="text" class="form-control" id="keadaan_koleksi_perawatan" name="keadaan_koleksi_perawatan">
-                        <?= form_error('keadaan_koleksi_perawatan', '<small class="text-danger pl-3">', '</small>'); ?>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="no_vitrin_koleksi_perawatan">No. vitrin</label>
-                        <input type="text" class="form-control" id="no_vitrin_koleksi_perawatan" name="no_vitrin_koleksi_perawatan">
-                        <?= form_error('no_vitrin_koleksi_perawatan', '<small class="text-danger pl-3">', '</small>'); ?>
-                    </div>
-
-                    <div class="form-group">
                         <label for="time_perawatan">Tanggal Perawatan</label>
                         <input type="date" class="form-control" id="time_perawatan" name="time_perawatan">
                         <?= form_error('time_perawatan', '<small class="text-danger pl-3">', '</small>'); ?>
@@ -107,16 +91,12 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="bahan_perawatan">Bahan yang digunakan</label>
-                        <textarea id="bahan_perawatan" class="form-control" name="bahan_perawatan"></textarea>
-                        <?= form_error('bahan_perawatan', '<small class="text-danger pl-3">', '</small>'); ?>
+                        <label for="penanggung_perawatan">Penanggung jawab</label>
+                        <textarea id="penanggung_perawatan" class="form-control" name="penanggung_perawatan"></textarea>
+                        <?= form_error('penanggung_perawatan', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
 
-                    <div class="form-group">
-                        <label for="tambahan_perawatan">Tambahan</label>
-                        <input type="text" class="form-control" id="tambahan_perawatan" name="tambahan_perawatan">
-                        <?= form_error('tambahan_perawatan', '<small class="text-danger pl-3">', '</small>'); ?>
-                    </div>
+                    
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

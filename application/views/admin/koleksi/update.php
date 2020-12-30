@@ -10,8 +10,8 @@
             </div>
 
             <div class="form-group">
-                <label for="jenis_koleksi">Jenis Koleksi</label>
-                <input type="text" class="form-control" id="jenis_koleksi" name="jenis_koleksi">
+                <label for="ruang_koleksi">Ruang Koleksi</label>
+                <input type="text" class="form-control" id="ruang_koleksi" name="ruang_koleksi">
             </div>
 
             <div class="form-group">
@@ -27,6 +27,11 @@
             <div class="form-group">
                 <label for="berat_koleksi">Berat</label>
                 <input type="text" class="form-control" id="berat_koleksi" name="berat_koleksi">
+            </div>
+			
+			<div class="form-group">
+                <label for="no_vitrin">No. vitrin</label>
+                <input type="text" class="form-control" id="no_vitrin" name="no_vitrin">
             </div>
 
             <div class="form-group">

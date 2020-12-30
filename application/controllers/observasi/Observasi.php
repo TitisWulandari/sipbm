@@ -77,7 +77,7 @@ class Observasi extends CI_Controller
 
         if ($insert) {
 
-            $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Sukses, Data user berhasil di Update !</div>');
+            $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Sukses, Data observasi berhasil di Update !</div>');
             redirect('observasi/observasi');
         }
     }

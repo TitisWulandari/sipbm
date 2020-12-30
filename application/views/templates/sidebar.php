@@ -44,7 +44,8 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="<?= base_url('koleksi/koleksi') ?>">Data Koleksi</a>
-                <a class="collapse-item jenis_koleksi" href="<?= base_url('koleksi/jenis_koleksi') ?>">Jenis Koleksi</a>
+                
+				<a class="collapse-item jenis_koleksi" href="<?= base_url('koleksi/ruang_koleksi') ?>">Ruang Koleksi</a>
             </div>
         </div>
     </li>
@@ -129,6 +130,15 @@
     </li>
     <li class="nav-item petugas">
         <a class="nav-link pb-0" href="<?= base_url('petugas/pemeriksaan/pemeriksaan') ?>">
+            <i class="fas fa-fw fa-cogs"></i>
+            <span>Pemeriksaan</span>
+        </a>
+    </li>
+    <!-- end petugas perawatan -->
+	
+	<!-- area petugas perawatan -->
+    <li class="nav-item petugas">
+        <a class="nav-link pb-0" href="<?= base_url('petugas/petugas_pemeriksaan/pemeriksaan') ?>">
             <i class="fas fa-fw fa-cogs"></i>
             <span>Pemeriksaan</span>
         </a>

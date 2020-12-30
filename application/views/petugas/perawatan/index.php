@@ -20,12 +20,10 @@
                         <th>No</th>
                         <th>Nama petugas</th>
                         <th>Nama koleksi</th>
-                        <th>Keadaan koleksi</th>
-                        <th>No. vitrin</th>
                         <th>Tanggal perawatan</th>
                         <th>Kegiatan</th>
-                        <th>Bahan yang digunakan</th>
-                        <th>Tambahan</th>
+                        <th>Penanggung jawab</th>
+                        
                         <th>Status</th>
                     </tr>
                 </thead>
@@ -38,12 +36,10 @@
                             <td><?= $no++ ?></td>
                             <td><?= $users["name"] ?></td>
                             <td><?= $per["nama_koleksi"]; ?></td>
-                            <td><?= $per["keadaan_koleksi_perawatan"]; ?></td>
-                            <td><?= $per["no_vitrin_koleksi_perawatan"]; ?></td>
                             <td><?= $per["time_perawatan"]; ?></td>
                             <td><?= $per["kegiatan_perawatan"]; ?></td>
-                            <td><?= $per["bahan_perawatan"]; ?></td>
-                            <td><?= $per["tambahan_perawatan"]; ?></td>
+                            <td><?= $per["penanggung_perawatan"]; ?></td>
+                          
                             <td>
                                 <div class="btn-group" role="group">
                                     <?php if ($per['validasi_perawatan'] == "belum") { ?>
@@ -103,18 +99,6 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="keadaan_koleksi_perawatan">Keadaan Koleksi</label>
-                        <input type="text" class="form-control" id="keadaan_koleksi_perawatan" name="keadaan_koleksi_perawatan" required>
-
-                    </div>
-
-                    <div class="form-group">
-                        <label for="no_vitrin_koleksi_perawatan">No. vitrin</label>
-                        <input type="text" class="form-control" id="no_vitrin_koleksi_perawatan" name="no_vitrin_koleksi_perawatan" required>
-
-                    </div>
-
-                    <div class="form-group">
                         <label for="time_perawatan">Tanggal Perawatan</label>
                         <input type="datetime-local" class="form-control" id="time_perawatan" name="time_perawatan" required>
 
@@ -127,8 +111,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="bahan_perawatan">Bahan yang digunakan</label>
-                        <textarea id="bahan_perawatan" class="form-control" name="bahan_perawatan" required></textarea>
+                        <label for="penanggung_perawatan">Penanggung jawab</label>
+                        <textarea id="penanggung_perawatan" class="form-control" name="penanggung_perawatan" required></textarea>
 
                     </div>
 

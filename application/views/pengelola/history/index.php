@@ -39,7 +39,7 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">List Data History</h6>
+        <h6 class="m-0 font-weight-bold text-primary">List Data History Perawatan</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -49,12 +49,10 @@
                         <th>No</th>
                         <th>Nama petugas</th>
                         <th>Nama koleksi</th>
-                        <th>Keadaan koleksi</th>
-                        <th>No. vitrin</th>
                         <th>Tanggal Perawatan</th>
                         <th>Kegiatan</th>
-                        <th>Bahan yang digunakan</th>
-                        <th>Tambahan</th>
+                        <th>Penanggung jawab</th>
+                        
                     </tr>
                 </thead>
                 
@@ -65,12 +63,10 @@
                             <td><?= $no++ ?></td>
                             <td><?= $history["name"] ?></td>
                             <td><?= $history["nama_koleksi"]; ?></td>
-                            <td><?= $history["keadaan_koleksi_perawatan"]; ?></td>
-                            <td><?= $history["no_vitrin_koleksi_perawatan"]; ?></td>
                             <td><?= $history["time_perawatan"]; ?></td>
                             <td><?= $history["kegiatan_perawatan"]; ?></td>
-                            <td><?= $history["bahan_perawatan"]; ?></td>
-                            <td><?= $history["tambahan_perawatan"]; ?></td>
+                            <td><?= $history["penanggung_perawatan"]; ?></td>
+                           
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

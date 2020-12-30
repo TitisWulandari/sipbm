@@ -6,20 +6,29 @@
 
 
 <div class="card">
-    <?php foreach ($abouts as $about) : ?>
-    <h3 class="text-center mb-4 mt-3"><?= $about["nama_museum"] ?></h3>
     <div class="row justify-content-center">
         <div class="col-sm-3">
-            <img src="<?= base_url('assets/img/abouts/' . $about["gambar_museum"]); ?>" alt="" class="img-thumbnail">
+		<br><br>
+			<img src="assets/img/abouts/Logo.jpg" alt="" class="img-thumbnail"/>
         </div>
     </div>
     
-    <div class="row justify-content-center">
+	<div class="row justify-content-center">
+	
         <div class="col-sm-11">
-            
-            <p class="mt-5 mb-5"><?= $about["deskripsi_museum"]; ?></p>
+            <p class="mt-5 mb-5">Museum Soesilo Soedarman adalah Museum yang khusus menyimpan peninggalan-peninggalan Jenderal TNI Soesilo Soedarman. Koleksi peninggalan yang dimiliki mulai dari surat-surat perjalanan, foto-foto kegiatan, pakaian dinas TNI, senapan, 
+				mobil komando, pesawat patroli maritim NOMAD N-22 Angkatan Laut Indonesia, OV-10 BRONCO pesawat tempur taktis Angkatan Udara Indonesia, PT-76 tank amfibi, 
+				dan patung maskot badak tanduk tunggal. 
+				<br><br>
+				Museum tanpa koleksi tidak bisa hidup, karena koleksi adalah ruh dari museum itu sendiri.   
+				Koleksi meliputi benda-benda yang telah melewati kurun waktu yang lama, 
+				dimulai sejak benda-benda itu digunakan hingga sampai menjadi koleksi. 
+				Sehingga koleksi museum membutuhkan perawatan yang disebut konservasi.
+				Perawatan pada Museum Soesilo Soedarman dilakukan oleh karyawan dan petugas museum secara berkala yaitu 3 minggu sekali 
+				dan berdasarkan hasil observasi. Perawatan yang dilakukan juga memiliki perlakuan yang berbeda-beda baik dari segi bahan 
+				yang digunakan maupun tata cara yang dilakukan.
+				</p>
         </div>
-        <a href="<?= base_url('admin/update_about/' . $about["id_about_museum"]); ?>" class="btn btn-primary mb-4" style="width: 200px;">Update Beranda</a>
-    </div>
-    <?php endforeach; ?>
+  </div>
+   
 </div>

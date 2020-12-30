@@ -9,37 +9,28 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama</th>
-                        <th>Jenis</th>
+                        <th>Nama Koleksi</th>
+                       <th>Ruang Koleksi</th>
                         <th>Panjang</th>
                         <th>Lebar</th>
                         <th>Berat</th>
+						<th>No. vitrin</th>
                         <th>Tahun</th>
                         <th>Foto</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama</th>
-                        <th>Jenis</th>
-                        <th>Panjang</th>
-                        <th>Lebar</th>
-                        <th>Berat</th>
-                        <th>Tahun</th>
-                        <th>Foto</th>
-                    </tr>
-                </tfoot>
+
                 <tbody>
                     <?php $no = 1;
                     foreach ($koleksi as $data) : ?>
                         <tr>
                             <td><?= $no++ ?></td>
                             <td><?= $data->nama_koleksi; ?></td>
-                            <td><?= $data->nama_jenis_koleksi; ?></td>
+							<td><?= $data->nama_ruang_koleksi; ?></td>
                             <td><?= $data->panjang_koleksi; ?></td>
                             <td><?= $data->lebar_koleksi; ?></td>
                             <td><?= $data->berat_koleksi; ?></td>
+							<td><?= $data->no_vitrin; ?></td>
                             <td><?= $data->tahun_koleksi; ?></td>
                             <td>
                                 <img height="20" class="img-profile" src="<?= base_url('assets/upload/post/thumbs/' . $data->gambar_koleksi) ?>">
@@ -71,13 +62,21 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="jenis_koleksi">Jenis Koleksi</label>
-                        <select name="id_jenis_koleksi" class="form-control" required>
-                            <?php foreach ($jenis as $id_jenis) : ?>
-                                <option value="<?= $id_jenis->id_jenis_koleksi ?>"><?= $id_jenis->nama_jenis_koleksi ?></option>
+
+                        <label for="ruang_koleksi">Ruang Koleksi</label>
+
+                        <select name="id_ruang_koleksi" class="form-control" required>
+
+                            <?php foreach ($ruang as $id_ruang) : ?>
+
+                                <option value="<?= $id_ruang->id_ruang_koleksi ?>"><?= $id_ruang->nama_ruang_koleksi ?></option>
+
                             <?php endforeach ?>
+
                         </select>
+
                     </div>
+
 
                     <div class="form-group">
                         <label for="panjang_koleksi">Panjang</label>
@@ -92,6 +91,11 @@
                     <div class="form-group">
                         <label for="berat_koleksi">Berat</label>
                         <input type="text" class="form-control" id="berat_koleksi" name="berat_koleksi" required>
+                    </div>
+					
+					<div class="form-group">
+                        <label for="no_vitrin">No. vitrin</label>
+                        <input type="text" class="form-control" id="no_vitrin" name="no_vitrin" required>
                     </div>
 
                     <div class="form-group">
@@ -136,9 +140,12 @@
                             <input disabled type="text" name="nama_koleksi" value="<?= $data->nama_koleksi; ?>" class="form-control" id="nama_koleksi">
                         </div>
 
-                        <div class="form-group">
-                            <label for="email">Jenis Koleksi</label>
-                            <input disabled type="email" name="id_jenis_koleksi" value="<?= $data->nama_jenis_koleksi; ?>" class="form-control" id="email">
+                       <div class="form-group">
+
+                            <label for="email">Ruang Koleksi</label>
+
+                            <input disabled type="email" name="id_ruang_koleksi" value="<?= $data->nama_ruang_koleksi; ?>" class="form-control" id="email">
+
                         </div>
 
                         <div class="form-group">
@@ -153,6 +160,12 @@
                             <label for="password">Berat</label>
                             <input disabled type="text" name="berat_koleksi" value="<?= $data->berat_koleksi; ?>" class="form-control" id="password">
                         </div>
+						
+						<div class="form-group">
+                            <label for="password">No. vitrin</label>
+                            <input disabled type="text" name="no_vitrin" value="<?= $data->no_vitrin; ?>" class="form-control" id="password">
+                        </div>
+						
                         <div class="form-group">
                             <label for="password">Tahun</label>
                             <input disabled type="text" name="tahun_koleksi" value="<?= $data->tahun_koleksi; ?>" class="form-control" id="password">
@@ -205,16 +218,24 @@
                             <input type="text" hidden name="id_users" value="<?= $users['id_users']; ?>" class="form-control" id="nama_koleksi" placeholder="Masukan nama user" required>
 
                         </div>
-                        <div class="form-group">
-                            <label for="jenis_koleksi">Jenis Koleksi</label>
-                            <select name="id_jenis_koleksi" class="form-control" required>
-                                <option value="<?= $data->id_jenis_koleksi; ?>"><?= $data->nama_jenis_koleksi; ?></option>
-                                <?php foreach ($jenis as $id_jenis) : ?>
-                                    <option value="<?= $id_jenis->id_jenis_koleksi ?>"><?= $id_jenis->nama_jenis_koleksi ?></option>
-                                <?php endforeach ?>
-                            </select>
-                        </div>
+                        
+				<div class="form-group">
 
+                            <label for="ruang_koleksi">Ruang Koleksi</label>
+
+                            <select name="id_ruang_koleksi" class="form-control" required>
+
+                                <option value="<?= $data->id_ruang_koleksi; ?>"><?= $data->nama_ruang_koleksi; ?></option>
+
+                                <?php foreach ($ruang as $id_ruang) : ?>
+
+                                    <option value="<?= $id_ruang->id_ruang_koleksi ?>"><?= $id_jenis->nama_ruang_koleksi ?></option>
+
+                                <?php endforeach ?>
+
+                            </select>
+
+                        </div>
 
                         <div class="form-group">
                             <label for="email">Panjang</label>
@@ -228,6 +249,12 @@
                             <label for="email">Berat</label>
                             <input type="text" name="berat_koleksi" value="<?= $data->berat_koleksi; ?>" class="form-control" id="berat_koleksi" required>
                         </div>
+						
+						<div class="form-group">
+                            <label for="email">No. vitrin</label>
+                            <input type="text" name="no_vitrin" value="<?= $data->no_vitrin; ?>" class="form-control" id="no_vitrin" required>
+                        </div>
+						
                         <div class="form-group">
                             <label for="email">Tahun</label>
                             <input type="text" name="tahun_koleksi" value="<?= $data->tahun_koleksi; ?>" class="form-control" id="berat_koleksi" required>

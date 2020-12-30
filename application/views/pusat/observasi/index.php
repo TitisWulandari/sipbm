@@ -13,7 +13,7 @@
                         <th>Bahan</th>
                         <th>Keadaan koleksi</th>
                         <th>No. vitrin</th>
-                        <!-- <th>Tanggal observasi</th> -->
+                        <th>Tanggal observasi</th>
                         <th>Rekomendasi</th>
                     </tr>
                 </thead>
@@ -28,7 +28,7 @@
                             <td><?= $data->bahan_observasi_koleksi; ?></td>
                             <td><?= $data->keadaan_observasi_koleksi; ?></td>
                             <td><?= $data->no_vitrin_observasi_koleksi; ?></td>
-                            <!-- <td><?= $data->time_observasi; ?></td> -->
+                            <td><?= $data->time_observasi; ?></td>
                             <td><?= $data->rekomendasi_observasi_koleksi; ?></td>
 
                         </tr>

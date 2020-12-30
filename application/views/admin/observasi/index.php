@@ -27,7 +27,7 @@
                         <th>Keadaan koleksi</th>
                         <th>No.vitrin</th>
 						<th>Jumlah Koleksi</th>
-                        <!-- <th>Tanggal observasi</th> -->
+                        <th>Tanggal observasi</th>
                         <th>Rekomendasi</th>
                         <th>Aksi</th>
                     </tr>
@@ -44,7 +44,7 @@
                             <td><?= $data->keadaan_observasi_koleksi; ?></td>
                             <td><?= $data->no_vitrin_observasi_koleksi; ?></td>
 							<td><?= $data->jumlah_koleksi; ?></td>
-                            <!-- <td><?= $data->time_observasi; ?></td> -->
+                            <td><?= $data->time_observasi; ?></td>
                             <td><?= $data->rekomendasi_observasi_koleksi; ?></td>
                             <td>
                                 <a href="" data-toggle="modal" data-target="#ModalEdit<?= $data->id_observasi; ?>" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>

@@ -25,12 +25,10 @@ th {
                 <th>No</th>
                 <th>Nama petugas</th>
                 <th>Nama koleksi</th>
-                <th>Keadaan koleksi</th>
-                <th>No. vitrin</th>
                 <th>Tanggal perawatan</th>
                 <th>Kegiatan</th>
-                <th>Bahan yang digunakan</th>
-                <th>Tambahan</th>
+                <th>Penanggung jawab</th>
+                
             </tr>
         </thead>
         <tbody>
@@ -40,12 +38,10 @@ th {
                     <td><?= $no++ ?></td>
                     <td><?= $per->name ?></td>
                     <td><?= $per->nama_koleksi; ?></td>
-                    <td><?= $per->keadaan_koleksi_perawatan; ?></td>
-                    <td><?= $per->no_vitrin_koleksi_perawatan; ?></td>
                     <td><?= $per->time_perawatan; ?></td>
                     <td><?= $per->kegiatan_perawatan; ?></td>
-                    <td><?= $per->bahan_perawatan; ?></td>
-                    <td><?= $per->tambahan_perawatan; ?></td>
+                    <td><?= $per->penanggung_perawatan; ?></td>
+                   
                 </tr>
             <?php endforeach; ?>
         </tbody>
