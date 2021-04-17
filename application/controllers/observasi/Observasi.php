@@ -58,13 +58,13 @@ class Observasi extends CI_Controller
 
         $data = [
             'id_koleksi' => $id_koleksi,
-           
+
             'keadaan_observasi_koleksi' => $keadaan_observasi_koleksi,
             'time_observasi' => $time_observasi,
             'rekomendasi_observasi_koleksi' => $rekomendasi_observasi_koleksi,
             'time_update_observasi' => date('Y-m-d H:i:s'),
             'id_users' => $id_users
-			
+
         ];
 
         $insert = $this->Observasi_model->update($id, $data);
@@ -80,7 +80,7 @@ class Observasi extends CI_Controller
     {
 
         $id_koleksi = $this->input->post('id_koleksi');
-       
+
         $keadaan_observasi_koleksi = $this->input->post('keadaan_observasi_koleksi');
         $time_observasi = $this->input->post('time_observasi');
         $rekomendasi_observasi_koleksi = $this->input->post('rekomendasi_observasi_koleksi');
@@ -88,12 +88,12 @@ class Observasi extends CI_Controller
 
         $data = [
             'id_koleksi' => $id_koleksi,
-           
+
             'keadaan_observasi_koleksi' => $keadaan_observasi_koleksi,
             'time_observasi' => $time_observasi,
             'rekomendasi_observasi_koleksi' => $rekomendasi_observasi_koleksi,
             'time_create_observasi' => date('Y-m-d H:i:s'),
-            'id_users' => $id
+            'id_users' => $this->session->userdata('id_users')
         ];
 
         $insert = $this->Observasi_model->tambah('tbl_observasi', $data);

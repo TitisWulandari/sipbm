@@ -29,12 +29,12 @@
                     <tr>
                         <th>No</th>
                         <th>Nama petugas</th>
-                        
+
                         <th>Nama koleksi</th>
-						<th>Kondisi Kerusakan</th>
-						<th>Bukti Kerusakan</th>
+                        <th>Kondisi Kerusakan</th>
+                        <th>Bukti Kerusakan</th>
                         <th>Status</th>
-						<!--<th>Aksi</th> -->
+                        <!--<th>Aksi</th> -->
                     </tr>
                 </thead>
 
@@ -45,10 +45,10 @@
                         <tr>
                             <td><?= $no++ ?></td>
                             <td><?= $per->nama_koleksi ?></td>
-                        
+
                             <td><?= $per->nama_koleksi; ?></td>
-							 <td><?= $per->kondisi_kerusakan; ?></td>
-							 <td>
+                            <td><?= $per->kondisi_kerusakan; ?></td>
+                            <td>
 
                                 <img height="20" class="img-profile" src="<?= base_url('assets/upload/pemeriksaan/thumbs/' . $per->gambar_kerusakan) ?>">
 
@@ -66,7 +66,7 @@
                                     <?php } ?>
                                 </div>
                             </td>
-							<!--
+                            <!--
 							<td>
 
                                 <a href="" data-toggle="modal" data-target="#ModalEdit<?= $per->id_pemeriksaan; ?>" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
@@ -88,7 +88,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="formDataPemeriksaan" tabindex="-1" aria-labelledby="formDataPemeriksaanLabel" aria-hidden="true">
+<div class="modal fade" id="formDataKoleksi" tabindex="-1" aria-labelledby="formDataPemeriksaanLabel" aria-hidden="true">
 
     <div class="modal-dialog modal-lg">
 
@@ -120,7 +120,7 @@
                         </select>
                     </div>
 
-                   
+
 
                     <div class="form-group">
 
@@ -283,7 +283,7 @@
 
                         </div>
 
-						
+
 
                         <div class="form-group">
 
@@ -293,7 +293,7 @@
 
                         </div>
 
-                        
+
                         <div class="form-group">
 
                             <button type="submit" class="btn btn-success">UPDATE</button>
@@ -311,7 +311,7 @@
             </div>
 
         </div>
-		</div>
+    </div>
 
     </div>
 
