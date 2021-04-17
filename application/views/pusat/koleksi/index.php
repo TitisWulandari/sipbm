@@ -63,7 +63,7 @@
 
                     <div class="form-group">
 
-                        <label for="ruang_koleksi">Ruang Koleksi</label>
+                        <label for="id_ruang_koleksi">Ruang Koleksi</label>
 
                         <select name="id_ruang_koleksi" class="form-control" required>
 
@@ -221,7 +221,7 @@
                         
 				<div class="form-group">
 
-                            <label for="ruang_koleksi">Ruang Koleksi</label>
+                            <label for="id_ruang_koleksi">Ruang Koleksi</label>
 
                             <select name="id_ruang_koleksi" class="form-control" required>
 
@@ -229,7 +229,7 @@
 
                                 <?php foreach ($ruang as $id_ruang) : ?>
 
-                                    <option value="<?= $id_ruang->id_ruang_koleksi ?>"><?= $id_jenis->nama_ruang_koleksi ?></option>
+                                    <option value="<?= $id_ruang->id_ruang_koleksi ?>"><?= $id_ruang->nama_ruang_koleksi ?></option>
 
                                 <?php endforeach ?>
 

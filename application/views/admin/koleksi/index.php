@@ -34,7 +34,7 @@
 
                         <th>Nama Koleksi</th>
 						
-						 <th>Ruang Koleksi</th>
+						 <th>Nama Ruang Koleksi</th>
 
                         <th>Panjang</th>
 
@@ -152,13 +152,13 @@
 
 					<div class="form-group">
 
-                        <label for="ruang_koleksi">Ruang Koleksi</label>
+                        <label for="id_ruang_koleksi">Ruang Koleksi</label>
 
                         <select name="id_ruang_koleksi" class="form-control" required>
 
                             <?php foreach ($ruang as $id_ruang) : ?>
 
-                                <option value="<?= $id_ruang->id_ruang_koleksi ?>"><?= $id_ruang->nama_ruang_koleksi ?></option>
+                                <option value="<?= $id_ruang->nama_ruang_koleksi ?>"><?= $id_ruang->nama_ruang_koleksi ?></option>
 
                             <?php endforeach ?>
 
@@ -290,7 +290,7 @@
 
 						<div class="form-group">
 
-                            <label for="email">Ruang Koleksi</label>
+                            <label for="email">Nama Ruang Koleksi</label>
 
                             <input disabled type="email" name="id_ruang_koleksi" value="<?= $data->nama_ruang_koleksi; ?>" class="form-control" id="email">
 
@@ -388,11 +388,11 @@
 
 <?php endforeach ?>
 
-<!-- end Modal Detail Users -->
+<!-- end Modal Detail koleksi -->
 
 
 
-<!-- Modal Edit users -->
+<!-- Modal Edit koleksi -->
 
 <?php foreach ($koleksi as $data) : ?>
 
@@ -434,15 +434,15 @@
 
 						<div class="form-group">
 
-                            <label for="ruang_koleksi">Ruang Koleksi</label>
+                            <label for="id_ruang_koleksi">Ruang Koleksi</label>
 
                             <select name="id_ruang_koleksi" class="form-control" required>
 
-                                <option value="<?= $data->id_ruang_koleksi; ?>"><?= $data->nama_ruang_koleksi; ?></option>
+                                <option value="<?= $data->nama_ruang_koleksi; ?>"><?= $data->nama_ruang_koleksi; ?></option>
 
                                 <?php foreach ($ruang as $id_ruang) : ?>
 
-                                    <option value="<?= $id_ruang->id_ruang_koleksi ?>"><?= $id_jenis->nama_ruang_koleksi ?></option>
+                                    <option value="<?= $id_ruang->nama_ruang_koleksi ?>"><?= $id_ruang->nama_ruang_koleksi ?></option>
 
                                 <?php endforeach ?>
 

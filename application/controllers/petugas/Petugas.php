@@ -19,7 +19,7 @@ class Petugas extends CI_Controller
             }
         }
         $data = [
-            'title' => 'Pusat | Data Petugas'
+            'title' => 'Data Petugas'
         ];
         $data['users'] = $this->db->get_where('tbl_users', ['email' =>
         $this->session->userdata('email')])->row_array();
@@ -107,7 +107,7 @@ class Petugas extends CI_Controller
             ];
             $update = $this->Users_model->update($id, $data);
             if ($update) {
-                $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Sukses, Data berhasil di update !</div>');
+                $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Sukses, Data petugas berhasil di update !</div>');
                 redirect('petugas/petugas');
             }
         }

@@ -89,7 +89,7 @@
 
             $(".admin").remove();
             $(".pusat").remove();
-            $(".jenis_koleksi").remove();
+           
             $(".petugas").remove();
 
 

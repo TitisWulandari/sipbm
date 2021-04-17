@@ -150,14 +150,12 @@
                 </div>
                 <div class="modal-body">
                     <div class="alert alert-danger" role="alert">
-                        <h4 class="alert-heading">Anda yakin ?</h4>
-                        <p>Jika anda menghapus Petugas <b><?= $datausers['name']; ?></b> maka data dari petugas tersebut terhapus dari sistem !!. Jika ada kesalahan dan perlu di ubah maka lakukan update data dengan mengklik tombol EDIT yang berwarna hijau !!</p>
-                        <hr>
-                        <p class="mb-0">Namun jika memang anda sudah yakin maka silahkan klik tombol Yakin !</p>
+                        
+                        <p>Apakah Anda akan menghapus Petugas <b><?= $datausers['name']; ?></b> 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-warning" data-dismiss="modal">Tutup</button>
-                        <a class="btn btn-danger" href="<?= base_url('petugas/Petugas/deletePetugas/' . $datausers['id_users']) ?>">YAKIN !</a>
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Tidak</button>
+                        <a class="btn btn-danger" href="<?= base_url('petugas/Petugas/deletePetugas/' . $datausers['id_users']) ?>">Ya</a>
                     </div>
                 </div>
             </div>

@@ -51,10 +51,7 @@ class Observasi extends CI_Controller
 
         $id_koleksi = $this->input->post('id_koleksi');
         $id_ruang_koleksi = $this->input->post('id_ruang_koleksi');
-        $bahan_observasi_koleksi = $this->input->post('bahan_observasi_koleksi');
         $keadaan_observasi_koleksi = $this->input->post('keadaan_observasi_koleksi');
-        $no_vitrin_observasi_koleksi = $this->input->post('no_vitrin_observasi_koleksi');
-        $jumlah_koleksi = $this->input->post('jumlah_koleksi');
         $time_observasi = $this->input->post('time_observasi');
         $rekomendasi_observasi_koleksi = $this->input->post('rekomendasi_observasi_koleksi');
         $id_users = $this->input->post('id_users');
@@ -63,10 +60,7 @@ class Observasi extends CI_Controller
         $data = [
             'id_koleksi' => $id_koleksi,
             'id_ruang_koleksi' => $id_ruang_koleksi,
-            'bahan_observasi_koleksi' => $bahan_observasi_koleksi,
             'keadaan_observasi_koleksi' => $keadaan_observasi_koleksi,
-            'no_vitrin_observasi_koleksi' => $no_vitrin_observasi_koleksi,
-            'jumlah_koleksi' => $jumlah_koleksi,
             'time_observasi' => $time_observasi,
             'rekomendasi_observasi_koleksi' => $rekomendasi_observasi_koleksi,
             'time_update_observasi' => date('Y-m-d H:i:s'),
@@ -87,10 +81,7 @@ class Observasi extends CI_Controller
 
         $id_koleksi = $this->input->post('id_koleksi');
         $id_ruang_koleksi = $this->input->post('id_ruang_koleksi');
-        $bahan_observasi_koleksi = $this->input->post('bahan_observasi_koleksi');
         $keadaan_observasi_koleksi = $this->input->post('keadaan_observasi_koleksi');
-        $no_vitrin_observasi_koleksi = $this->input->post('no_vitrin_observasi_koleksi');
-        $jumlah_koleksi = $this->input->post('jumlah_koleksi');
         $time_observasi = $this->input->post('time_observasi');
         $rekomendasi_observasi_koleksi = $this->input->post('rekomendasi_observasi_koleksi');
         $id = $this->input->post('id_users');
@@ -98,10 +89,7 @@ class Observasi extends CI_Controller
         $data = [
             'id_koleksi' => $id_koleksi,
             'id_ruang_koleksi' => $id_ruang_koleksi,
-            'bahan_observasi_koleksi' => $bahan_observasi_koleksi,
             'keadaan_observasi_koleksi' => $keadaan_observasi_koleksi,
-            'no_vitrin_observasi_koleksi' => $no_vitrin_observasi_koleksi,
-            'jumlah_koleksi' => $jumlah_koleksi,
             'time_observasi' => $time_observasi,
             'rekomendasi_observasi_koleksi' => $rekomendasi_observasi_koleksi,
             'time_create_observasi' => date('Y-m-d H:i:s'),

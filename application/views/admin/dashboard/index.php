@@ -8,13 +8,12 @@
 <div class="card">
     <div class="row justify-content-center">
         <div class="col-sm-3">
-		<br><br>
+		<br>
 			<img src="assets/img/abouts/Logo.jpg" alt="" class="img-thumbnail"/>
         </div>
     </div>
     
 	<div class="row justify-content-center">
-	
         <div class="col-sm-11">
             <p class="mt-5 mb-5">Museum Soesilo Soedarman adalah Museum yang khusus menyimpan peninggalan-peninggalan Jenderal TNI Soesilo Soedarman. Koleksi peninggalan yang dimiliki mulai dari surat-surat perjalanan, foto-foto kegiatan, pakaian dinas TNI, senapan, 
 				mobil komando, pesawat patroli maritim NOMAD N-22 Angkatan Laut Indonesia, OV-10 BRONCO pesawat tempur taktis Angkatan Udara Indonesia, PT-76 tank amfibi, 

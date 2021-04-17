@@ -29,48 +29,56 @@
                     <tr>
                         <th>No</th>
                         <th>Nama petugas</th>
+                        
                         <th>Nama koleksi</th>
-                        <th>Keadaan koleksi</th>
-                        <th>No. vitrin</th>
-                        <th>Tanggal perawatan</th>
-                        <th>Kegiatan</th>
-                        <th>Bahan yang digunakan</th>
-                        <th>Tambahan</th>
+						<th>Kondisi Kerusakan</th>
+						<th>Bukti Kerusakan</th>
                         <th>Status</th>
+						<!--<th>Aksi</th> -->
                     </tr>
                 </thead>
 
                 <tbody>
                     <?php $no = 1; ?>
 
-                    <?php foreach ($perawatan as $per) : ?>
+                    <?php foreach ($pemeriksaan as $per) : ?>
                         <tr>
                             <td><?= $no++ ?></td>
-                            <td><?= $users["name"] ?></td>
-                            <td><?= $per["nama_koleksi"]; ?></td>
-                            <td><?= $per["keadaan_koleksi_perawatan"]; ?></td>
-                            <td><?= $per["no_vitrin_koleksi_perawatan"]; ?></td>
-                            <td><?= $per["time_perawatan"]; ?></td>
-                            <td><?= $per["kegiatan_perawatan"]; ?></td>
-                            <td><?= $per["bahan_perawatan"]; ?></td>
-                            <td><?= $per["tambahan_perawatan"]; ?></td>
+                            <td><?= $per->nama_koleksi ?></td>
+                        
+                            <td><?= $per->nama_koleksi; ?></td>
+							 <td><?= $per->kondisi_kerusakan; ?></td>
+							 <td>
+
+                                <img height="20" class="img-profile" src="<?= base_url('assets/upload/pemeriksaan/thumbs/' . $per->gambar_kerusakan) ?>">
+
+                            </td>
                             <td>
                                 <div class="btn-group" role="group">
-                                    <?php if ($per['validasi_perawatan'] == "belum") { ?>
-                                        <a style="color: white;" class="badge badge-danger " href="<?php echo site_url('petugas/petugas_perawatan/perawatan/updateStatusW/' . $per['id_perawatan']) ?>">
-                                            Open
+                                    <?php if ($per->status_pemeriksaan == "1") { ?>
+                                        <a style="color: white;" class="badge badge-danger ">
+                                            Sudah dilaporkan
                                         </a>
-                                    <?php } elseif ($per['validasi_perawatan'] == "waiting") { ?>
-                                        <a style="color: white;" class="badge badge-warning">
-                                            Waiting Approve
-                                        </a>
-                                    <?php } elseif ($per['validasi_perawatan'] == "sudah") { ?>
-                                        <a style="color: white;" class="badge badge-secondary">
-                                            Done
+                                    <?php } elseif ($per->status_pemeriksaan == "2") { ?>
+                                        <a style="color: white;" class="badge badge-success">
+                                            Valid
                                         </a>
                                     <?php } ?>
                                 </div>
                             </td>
+							<!--
+							<td>
+
+                                <a href="" data-toggle="modal" data-target="#ModalEdit<?= $per->id_pemeriksaan; ?>" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
+
+                                <a href="" data-toggle="modal" data-target="#ModalDetail<?= $per->id_pemeriksaan; ?>" class="btn btn-info btn-sm"><i class="fas fa-info-circle"></i></a>
+
+                                <a href="" data-toggle="modal" data-target="#ModalUpdateImg<?= $per->id_pemeriksaan; ?>" class="btn btn-warning btn-sm"><i class="fas fa-camera"></i></a>
+
+                                <a href="" data-toggle="modal" data-target="#ModalHapus<?= $per->id_pemeriksaan; ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+
+                            </td>
+							-->
 
                         </tr>
                     <?php endforeach; ?>
@@ -80,7 +88,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="formDataKoleksi" tabindex="-1" aria-labelledby="formDataKoleksiLabel" aria-hidden="true">
+<div class="modal fade" id="formDataPemeriksaan" tabindex="-1" aria-labelledby="formDataPemeriksaanLabel" aria-hidden="true">
 
     <div class="modal-dialog modal-lg">
 
@@ -98,7 +106,7 @@
 
             </div>
 
-            <form action="<?= base_url('koleksi/koleksi/doTambahBerita') ?>" enctype="multipart/form-data" method="POST">
+            <form action="<?= base_url('petugas/pemeriksaan/Pemeriksaan/doTambahBerita') ?>" enctype="multipart/form-data" method="POST">
 
                 <div class="modal-body">
 
@@ -112,37 +120,11 @@
                         </select>
                     </div>
 
-                    <div class="form-group">
-                        <label for="id_ruang_koleksi">Nama ruang koleksi</label>
-                        <select class="form-control" id="id_ruang_koleksi" name="id_ruang_koleksi">
-
-                            <?php foreach ($ruang as $dataruang) : ?>
-                                <option value="<?= $dataruang->id_ruang_koleksi; ?>"><?= $dataruang->nama_ruang_koleksi; ?></option>
-                            <?php endforeach ?>
-                        </select>
-                    </div>
-
-
+                   
 
                     <div class="form-group">
 
-                        <label for="jenis_koleksi">Jenis Koleksi</label>
-
-                        <select name="id_jenis_koleksi" class="form-control" required>
-
-                            <?php foreach ($jenis as $id_jenis) : ?>
-
-                                <option value="<?= $id_jenis->id_jenis_koleksi ?>"><?= $id_jenis->nama_jenis_koleksi ?></option>
-
-                            <?php endforeach ?>
-
-                        </select>
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <label for="koleksi_tahun">Kondisi</label>
+                        <label for="koleksi_tahun">Kondisi Kerusakan</label>
 
                         <textarea class="form-control" name="kondisi_kerusakan" id="kondisi_kerusakan" rows="3" required></textarea>
 
@@ -152,11 +134,11 @@
 
                     <div class="form-group">
 
-                        <label for="gambar_koleksi">Bukti Kerusakan</label>
+                        <label for="gambar_kerusakan">Bukti Kerusakan</label>
 
                         <div class="custom-file">
 
-                            <input type="file" class="custom-file-input" id="gambar_koleksi" name="gambar_koleksi" required>
+                            <input type="file" class="custom-file-input" id="gambar_kerusakan" name="gambar_kerusakan" required>
 
                             <label class="custom-file-label" for="customFile">Choose file</label>
 
@@ -183,3 +165,300 @@
     </div>
 
 </div>
+
+<!-- Modal Detail koleksi -->
+
+<?php foreach ($pemeriksaan as $per) : ?>
+
+    <div class="modal fade" id="ModalDetail<?= $per->id_pemeriksaan; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog" role="document">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="exampleModalLabel">Detail Pemeriksaan </h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+                        <span aria-hidden="true">&times;</span>
+
+                    </button>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <form action="" method="POST">
+
+                        <div class="form-group">
+
+                            <label for="nama">Nama Koleksi</label>
+
+                            <input disabled type="text" name="id_koleksi" value="<?= $per->nama_koleksi; ?>" class="form-control" id="nama_koleksi">
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label for="password">Kondisi kerusakan</label>
+
+                            <input disabled type="text" name="kondisi_kerusakan" value="<?= $per->kondisi_kerusakan; ?>" class="form-control" id="password">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="password">Dibuat Oleh <b><?= $per->level; ?></b> </label>
+
+                            <input disabled type="text" value="<?= $per->name; ?>" class="form-control" id="password">
+
+                        </div>
+
+
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
+
+<?php endforeach ?>
+
+<!-- end Modal Detail Pemeriksaan -->
+
+<!-- Modal Edit Pemeriksaan -->
+
+<?php foreach ($pemeriksaan as $per) : ?>
+
+    <div class="modal fade" id="ModalEdit<?= $per->id_pemeriksaan; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog" role="document">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="exampleModalLabel">Update Pemeriksaan</h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+                        <span aria-hidden="true">&times;</span>
+
+                    </button>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <form action="<?= base_url('petugas/pemeriksaan/Pemeriksaan/updatePemeriksaan') ?>" method="POST">
+
+                        <div class="form-group">
+
+                            <label for="nama">Nama Koleksi</label>
+
+                            <input type="text" name="id_koleksi" value="<?= $per->nama_koleksi; ?>" class="form-control" id="id_koleksi" placeholder="Masukan nama user" required>
+
+                            <input type="text" hidden name="id_pemeriksaan" value="<?= $per->id_pemeriksaan; ?>" class="form-control" id="nama_koleksi" placeholder="Masukan nama user" required>
+
+                            <input type="text" hidden name="id_users" value="<?= $users['id_users']; ?>" class="form-control" id="nama_koleksi" placeholder="Masukan nama user" required>
+
+
+
+                        </div>
+
+						
+
+                        <div class="form-group">
+
+                            <label for="email">Kondisi Kerusakan</label>
+
+                            <input type="text" name="kondisi_kerusakan" value="<?= $per->kondisi_kerusakan; ?>" class="form-control" id="berat_koleksi" required>
+
+                        </div>
+
+                        
+                        <div class="form-group">
+
+                            <button type="submit" class="btn btn-success">UPDATE</button>
+
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">BATALKAN</button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+		</div>
+
+    </div>
+
+<?php endforeach ?>
+
+<!-- end Modal Edit pemeriksaan -->
+
+
+
+<!-- Modal Update gambar pemeriksaan -->
+
+<?php foreach ($pemeriksaan as $per) : ?>
+
+    <div class="modal fade" id="ModalUpdateImg<?= $per->id_pemeriksaan; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog" role="document">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="exampleModalLabel">Update Gambar</h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+                        <span aria-hidden="true">&times;</span>
+
+                    </button>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <form action="<?= base_url('petugas/pemeriksaan/Pemeriksaan/UpdateGambarPemeriksaan') ?>" enctype="multipart/form-data" method="POST">
+
+
+
+                        <div class="form-group">
+
+                            <input type="text" hidden name="id_pemeriksaan" value="<?= $per->id_pemeriksaan; ?>" class="form-control" id="id_users" placeholder="Masukan nama user">
+
+                            <input type="text" hidden name="id_users" value="<?= $users['id_users']; ?>" class="form-control" id="nama_koleksi" placeholder="Masukan nama user" required>
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <img height="20" class="img-thumbnail" src="<?= base_url('assets/upload/post/thumbs/' . $data->gambar_kerusakan) ?>">
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label for="gambar_koleksi">Bukti Kerusakan Kerusakan</label>
+
+                            <div class="custom-file">
+
+                                <input type="file" class="custom-file-input" id="gambar_kerusakan" name="gambar_kerusakan" required>
+
+                                <label class="custom-file-label" for="customFile">Choose file</label>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <button type="submit" class="btn btn-success">UPDATE</button>
+
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">BATALKAN</button>
+
+                        </div>
+
+
+
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+<?php endforeach ?>
+
+<!-- end Modal Update Gambar Pemeriksaan -->
+
+
+
+<?php foreach ($pemeriksaan as $per) : ?>
+
+    <div class="modal fade" id="ModalHapus<?= $per->id_pemeriksaan; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog" role="document">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="exampleModalLabel">Hapus Pemeriksaan</h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+                        <span aria-hidden="true">&times;</span>
+
+                    </button>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="alert alert-danger" role="alert">
+
+                        <h4 class="alert-heading">Anda yakin ?</h4>
+
+                        <p>Jika anda menghapus Pemeriksaan maka data dari koleksi tersebut terhapus dari sistem !!. Jika ada kesalahan dan perlu di ubah maka lakukan update data dengan mengklik tombol EDIT yang berwarna hijau !!</p>
+
+                        <hr>
+
+                        <p class="mb-0">Namun jika memang anda sudah yakin maka silahkan klik tombol Yakin !</p>
+
+                    </div>
+
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Tutup</button>
+
+                        <a class="btn btn-danger" href="<?= base_url('Admin/deletePemeriksaan/' . $per->id_pemeriksaan) ?>">YAKIN !</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+<?php endforeach ?>

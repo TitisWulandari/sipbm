@@ -10,8 +10,8 @@
             </div>
 
             <div class="form-group">
-                <label for="ruang_koleksi">Ruang Koleksi</label>
-                <input type="text" class="form-control" id="ruang_koleksi" name="ruang_koleksi">
+                <label for="id_ruang_koleksi">Ruang Koleksi</label>
+                <input type="text" class="form-control" id="id_ruang_koleksi" name="id_ruang_koleksi">
             </div>
 
             <div class="form-group">

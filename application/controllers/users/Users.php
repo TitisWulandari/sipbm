@@ -97,7 +97,7 @@ class Users extends CI_Controller
             ];
             $update = $this->Users_model->update($id, $data);
             if ($update) {
-                $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Sukses, Data berhasil di update !</div>');
+                $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Sukses, Data user berhasil di update !</div>');
                 redirect('users/users');
             }
         }
@@ -116,7 +116,7 @@ class Users extends CI_Controller
         ];
         $update = $this->Users_model->update($id, $data);
         if ($update) {
-            $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Sukses, Data berhasil di update !</div>');
+            $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Sukses, Password berhasil di update !</div>');
             redirect('users/users');
         }
     }
@@ -125,7 +125,7 @@ class Users extends CI_Controller
     {
         $data['id_users'] = $this->Users_model->delete($id);
         $data['id_users'] = $this->Users_model->delete($id);
-        $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Sukses, Data berhasil di Hapus!</div>');
+        $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Sukses, Data user berhasil di Hapus!</div>');
         redirect('users/users');
     }
 

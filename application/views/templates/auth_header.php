@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="<?= base_url('assets/img/museum-logo.png') ?>" type="image/gif" sizes="16x16">
 
-    <title>SIPBBM | 2020</title>
+    <title>SIPBBM | 2021</title>
 
     <!-- Custom fonts for this template-->
     <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

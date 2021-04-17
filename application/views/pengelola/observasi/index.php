@@ -8,11 +8,8 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama Koleksi</th>
-                        <th>Nama ruang koleksi</th>
-                        <th>Bahan</th>
+                        <th>Nama Koleksi</th>                 
                         <th>Keadaan koleksi</th>
-                        <th>No. vitrin</th>
                         <th>Tanggal observasi</th>
                         <th>Rekomendasi</th>
                     </tr>
@@ -24,10 +21,7 @@
                         <tr>
                             <td><?= $no++  ?></td>
                             <td><?= $data->nama_koleksi; ?></td>
-                            <td><?= $data->nama_ruang_koleksi; ?></td>
-                            <td><?= $data->bahan_observasi_koleksi; ?></td>
                             <td><?= $data->keadaan_observasi_koleksi; ?></td>
-                            <td><?= $data->no_vitrin_observasi_koleksi; ?></td>
                             <td><?= $data->time_observasi; ?></td>
                             <td><?= $data->rekomendasi_observasi_koleksi; ?></td>
 
@@ -62,33 +56,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="id_ruang_koleksi">Nama ruang koleksi</label>
-                        <select class="form-control" id="id_ruang_koleksi" name="id_ruang_koleksi">
-                            <?php foreach ($ruang as $dataruang) : ?>
-                                <option value="<?= $dataruang->id_ruang_koleksi; ?>"><?= $dataruang->nama_ruang_koleksi; ?></option>
-                            <?php endforeach ?>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="bahan_observasi_koleksi">Bahan</label>
-                        <input type="text" class="form-control" name="bahan_observasi_koleksi">
-                        <input type="text" hidden class="form-control" name="id_users" value="<?= $users['id_users'] ?>">
-                    </div>
-
-                    <div class="form-group">
                         <label for="keadaan_observasi_koleksi">Keadaan Koleksi</label>
                         <input type="text" class="form-control" name="keadaan_observasi_koleksi">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="no_vitrin_observasi_koleksi">No. Vitrin</label>
-                        <input type="text" class="form-control" name="no_vitrin_observasi_koleksi">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="jumlah_koleksi">Jumlah Koleksi</label>
-                        <input type="text" class="form-control" name="jumlah_koleksi">
                     </div>
 
                     <div class="form-group">
@@ -134,23 +103,12 @@
                             <input type="text" name="name" value="<?= $data->nama_koleksi; ?>" class="form-control" id="nama" placeholder="Masukan nama user">
                         </div>
 
-                        <div class="form-group">
-                            <label for="email">Nama ruang koleksi</label>
-                            <input type="email" name="email" value="<?= $data->nama_ruang_koleksi; ?>" class="form-control" id="email" placeholder="Masukan email user">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="password">Bahan</label>
-                            <input type="text" name="bahan_observasi_koleksi" value="<?= $data->bahan_observasi_koleksi; ?>" class="form-control" id="password" placeholder="Masukan password user">
-                        </div>
+                       
                         <div class="form-group">
                             <label for="password">Keadaan</label>
                             <input type="text" name="keadaan_observasi_koleksi" value="<?= $data->keadaan_observasi_koleksi; ?>" class="form-control" id="password" placeholder="Masukan password user">
                         </div>
-                        <div class="form-group">
-                            <label for="password">No vitrin</label>
-                            <input type="text" name="no_vitrin_observasi_koleksi" value="<?= $data->no_vitrin_observasi_koleksi; ?>" class="form-control" id="password" placeholder="Masukan password user">
-                        </div>
+       
 
                         <div class="form-group">
                             <label for="password">Waktu Observasi</label>
@@ -204,35 +162,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="id_ruang_koleksi">Nama ruang koleksi</label>
-                                <select class="form-control" id="id_ruang_koleksi" name="id_ruang_koleksi">
-                                    <option value="<?= $dataob->id_ruang_koleksi; ?>"><?= $dataob->nama_ruang_koleksi; ?></option>
-                                    <?php foreach ($ruang as $dataruang) : ?>
-                                        <option value="<?= $dataruang->id_ruang_koleksi; ?>"><?= $dataruang->nama_ruang_koleksi; ?></option>
-                                    <?php endforeach ?>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="bahan_observasi_koleksi">Bahan</label>
-                                <input type="text" class="form-control" value="<?= $dataob->bahan_observasi_koleksi; ?>" name="bahan_observasi_koleksi">
-                                <input type="text" hidden class="form-control" name="id_users" value="<?= $users['id_users'] ?>">
-                                <input type="text" hidden class="form-control" name="id_observasi" value="<?= $dataob->id_observasi ?>">
-                            </div>
-
-                            <div class="form-group">
                                 <label for="keadaan_observasi_koleksi">Keadaan Koleksi</label>
                                 <input type="text" class="form-control" value="<?= $dataob->keadaan_observasi_koleksi; ?>" name="keadaan_observasi_koleksi">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="no_vitrin_observasi_koleksi">No. Vitrin</label>
-                                <input type="text" class="form-control" value="<?= $dataob->no_vitrin_observasi_koleksi; ?>" name="no_vitrin_observasi_koleksi">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="jumlah_koleksi">Jumlah Koleksi</label>
-                                <input type="text" class="form-control" value="<?= $dataob->jumlah_koleksi; ?>" name="jumlah_koleksi">
                             </div>
 
                             <div class="form-group">

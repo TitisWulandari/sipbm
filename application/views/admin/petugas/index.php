@@ -38,6 +38,7 @@
                             <td><?= $dape['telepon_users']; ?></td>
                             <td>
                                 <a href="" data-toggle="modal" data-target="#ModalEdit<?= $dape['id_users']; ?>" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
+								<a href="" data-toggle="modal" data-target="#ModalDetail<?= $dape['id_users']; ?>" class="btn btn-success btn-sm"><i class="fas fa-info-circle"></i></a>
                                 <a href="" data-toggle="modal" data-target="#ModalHapus<?= $dape['id_users']; ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
@@ -87,13 +88,15 @@
 </div>
 
 
+
+
 <!-- Modal Edit users -->
 <?php foreach ($petugas as $datausers) : ?>
     <div class="modal fade" id="ModalEdit<?= $datausers['id_users']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Update Petugas <?= $datausers['name']; ?></h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Update Data Petugas <?= $datausers['name']; ?></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -129,6 +132,45 @@
 <?php endforeach ?>
 <!-- end Modal Edit Users -->
 
+<!-- Modal Detail data petugas -->
+<?php foreach ($petugas as $datausers) : ?>
+    <div class="modal fade" id="ModalDetail<?= $datausers['id_users']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Detail Data Petugas <?= $datausers['name']; ?></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="POST">
+                        <div class="form-group">
+                            <label for="nama">Nama</label>
+                            <input type="text" name="name" value="<?= $datausers['name']; ?>" class="form-control" id="name">
+                            <input type="text" hidden name="id_users" value="<?= $datausers['id_users']; ?>" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Alamat</label>
+                            <input type="text" name="alamat_users" value="<?= $datausers['alamat_users']; ?>" class="form-control" id="alamat_users">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Telepon</label>
+                            <input type="text" name="telepon_users" value="<?= $datausers['telepon_users']; ?>" class="form-control" id="telepon_users">
+                        </div>
+
+				<div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endforeach ?>
+<!-- end Modal Detail Users -->
+
 <?php foreach ($petugas as $datausers) : ?>
     <div class="modal fade" id="ModalHapus<?= $datausers['id_users']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -141,14 +183,12 @@
                 </div>
                 <div class="modal-body">
                     <div class="alert alert-danger" role="alert">
-                        <h4 class="alert-heading">Anda yakin ?</h4>
-                        <p>Jika anda menghapus Petugas <b><?= $datausers['name']; ?></b> maka data dari petugas tersebut terhapus dari sistem !!. Jika ada kesalahan dan perlu di ubah maka lakukan update data dengan mengklik tombol EDIT yang berwarna hijau !!</p>
-                        <hr>
-                        <p class="mb-0">Namun jika memang anda sudah yakin maka silahkan klik tombol Yakin !</p>
+                        
+                        <p>Apakah Anda akan menghapus Petugas <b><?= $datausers['name']; ?></b> 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-warning" data-dismiss="modal">Tutup</button>
-                        <a class="btn btn-danger" href="<?= base_url('petugas/Petugas/deletePetugas/' . $datausers['id_users']) ?>">YAKIN !</a>
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Tidak</button>
+                        <a class="btn btn-danger" href="<?= base_url('petugas/Petugas/deletePetugas/' . $datausers['id_users']) ?>">Ya</a>
                     </div>
                 </div>
             </div>

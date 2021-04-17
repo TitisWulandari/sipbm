@@ -15,15 +15,7 @@
                         <th>Telepon</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>No</th>
-                        <th>Id Petugas</th>
-                        <th>Nama</th>
-                        <th>Alamat</th>
-                        <th>Telepon</th>
-                    </tr>
-                </tfoot>
+                
                 <tbody>
                     <?php $no = 1;
                     foreach ($petugas as $dape) :  ?>

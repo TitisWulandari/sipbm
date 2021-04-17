@@ -20,7 +20,7 @@ class Koleksi extends CI_Controller
             }
         }
         $data = [
-            'title' => 'Admin | Koleksi'
+            'title' => 'Data Koleksi'
         ];
         $data['users'] = $this->db->get_where('tbl_users', ['email' =>
         $this->session->userdata('email')])->row_array();
@@ -195,7 +195,7 @@ class Koleksi extends CI_Controller
             $update = $this->Koleksi_model->update($id, $data);
 
             if ($update) {
-                $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Sukses, Data berhasil di update !</div>');
+                $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Sukses, Gambar koleksi berhasil di update !</div>');
 
                 redirect('koleksi/Koleksi');
             }
@@ -232,7 +232,7 @@ class Koleksi extends CI_Controller
 
         if ($update) {
 
-            $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Sukses, Data berhasil di update !</div>');
+            $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Sukses, Data koleksi berhasil di update !</div>');
             redirect('koleksi/koleksi');
         }
     }
@@ -240,7 +240,7 @@ class Koleksi extends CI_Controller
     public function updatekoleksssi()
     {
         $this->form_validation->set_rules('nama_koleksi', 'nama koleksi', 'required');
-      
+		$this->form_validation->set_rules('id_ruang_koleksi', 'ID ruang', 'required');
         $this->form_validation->set_rules('panjang_koleksi', 'panjang koleksi', 'required');
         if ($this->form_validation->run() == FALSE) {
             $errors = $this->form_validation->error_array();

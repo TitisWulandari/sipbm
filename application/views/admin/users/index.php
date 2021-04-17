@@ -216,7 +216,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Update Passowrd <?= $datausers->name; ?></h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Update Password <?= $datausers->name; ?></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -259,14 +259,13 @@
                 </div>
                 <div class="modal-body">
                     <div class="alert alert-danger" role="alert">
-                        <h4 class="alert-heading">Anda yakin ?</h4>
-                        <p>Jika anda menghapus users <b><?= $datausers->name; ?></b> maka data dari user tersebut terhapus dari sistem !!. Jika ada kesalahan dan perlu di ubah maka lakukan update data dengan mengklik tombol EDIT yang berwarna hijau !!</p>
-                        <hr>
-                        <p class="mb-0">Namun jika memang anda sudah yakin maka silahkan klik tombol Yakin !</p>
+                        
+                        <p>Apakah Anda akan menghapus users <b><?= $datausers->name; ?></b> ?</p>
+                       
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-warning" data-dismiss="modal">Tutup</button>
-                        <a class="btn btn-danger" href="<?= base_url('users/users/deleteusers/' . $datausers->id_users) ?>">YAKIN !</a>
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Tidak</button>
+                        <a class="btn btn-danger" href="<?= base_url('users/users/deleteusers/' . $datausers->id_users) ?>">Ya</a>
                     </div>
                 </div>
             </div>

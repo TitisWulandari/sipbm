@@ -14,32 +14,8 @@
             </div>
 
             <div class="form-group">
-                <label for="id_ruang_koleksi">Nama ruang koleksi</label>
-                <select class="form-control" id="id_ruang_koleksi" name="id_ruang_koleksi">
-                    <option disabled>-- pilih koleksi --</option>
-                    <option value="admin">Bagian dalam</option>
-                    <option value="pihak_pusat">Bagian pojok lemari</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="bahan_observasi_koleksi">Bahan</label>
-                <input type="text" class="form-control" id="bahan_observasi_koleksi" name="bahan_observasi_koleksi">
-            </div>
-
-            <div class="form-group">
                 <label for="keadaan_observasi_koleksi">Keadaan Koleksi</label>
                 <input type="text" class="form-control" id="keadaan_observasi_koleksi" name="keadaan_observasi_koleksi">
-            </div>
-
-            <div class="form-group">
-                <label for="no_vitrin_observasi_koleksi">No. Vitrin</label>
-                <input type="text" class="form-control" id="no_vitrin_observasi_koleksi" name="no_vitrin_observasi_koleksi">
-            </div>
-
-            <div class="form-group">
-                <label for="jumlah_koleksi">Jumlah Koleksi</label>
-                <input type="text" class="form-control" id="jumlah_koleksi" name="jumlah_koleksi">
             </div>
 
             <div class="form-group">
