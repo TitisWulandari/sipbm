@@ -52,7 +52,7 @@ class Koleksi extends CI_Controller
             'required',
             array('required' => 'Nama Koleksi Harus di Isi')
         );
-	
+
         $this->form_validation->set_rules(
             'panjang_koleksi',
             'Panjang Koleksi',
@@ -74,15 +74,15 @@ class Koleksi extends CI_Controller
             'required',
             array('required' => 'Berat Koleksi Harus di Isi')
         );
-		
-		$this->form_validation->set_rules(
+
+        $this->form_validation->set_rules(
             'no_vitrin',
             'No. vitrin',
             'required',
             'required',
             array('required' => 'No. vitrin Harus di Isi')
         );
-		
+
         $this->form_validation->set_rules(
             'tahun_koleksi',
             'Tahun Koleksi',
@@ -133,7 +133,7 @@ class Koleksi extends CI_Controller
                     'panjang_koleksi'        => $this->input->post('panjang_koleksi'),
                     'lebar_koleksi'        => $this->input->post('lebar_koleksi'),
                     'berat_koleksi'        => $this->input->post('berat_koleksi'),
-					'no_vitrin'        		=> $this->input->post('no_vitrin'),
+                    'no_vitrin'      => $this->input->post('no_vitrin'),
                     'tahun_koleksi'        => $this->input->post('tahun_koleksi'),
                     'time_create_koleksi'    => date('Y-m-d H:i:s'),
                     'gambar_koleksi'        => $upload_data['uploads']['file_name'],
@@ -205,30 +205,30 @@ class Koleksi extends CI_Controller
     public function updateKoleksi()
 
     {
+        $id = $this->input->post('id_koleksi');
         $nama_koleksi = $this->input->post('nama_koleksi');
-		$id_ruang_koleksi = $this->input->post('id_ruang_koleksi');
+        $id_ruang_koleksi = $this->input->post('id_ruang_koleksi');
         $panjang_koleksi = $this->input->post('panjang_koleksi');
         $lebar_koleksi = $this->input->post('lebar_koleksi');
         $berat_koleksi = $this->input->post('berat_koleksi');
-		$no_vitrin = $this->input->post('no_vitrin');
+        $no_vitrin = $this->input->post('no_vitrin');
         $tahun_koleksi = $this->input->post('tahun_koleksi');
         $id_users = $this->input->post('id_users');
 
-        $id = $this->input->post('id_koleksi');
 
         $data = [
             'nama_koleksi' => $nama_koleksi,
-			'id_ruang_koleksi' => $id_ruang_koleksi,
+            'id_ruang_koleksi' => $id_ruang_koleksi,
             'panjang_koleksi' => $panjang_koleksi,
             'lebar_koleksi' => $lebar_koleksi,
             'berat_koleksi' => $berat_koleksi,
-			 'no_vitrin' => $no_vitrin,
+            'no_vitrin' => $no_vitrin,
             'tahun_koleksi' => $tahun_koleksi,
             'id_users' => $id_users,
             'time_update_koleksi' => date('Y-m-d H:i:s')
         ];
 
-        $update = $this->Koleksi_model->update1($id, $data);
+        $update = $this->Koleksi_model->update($id, $data);
 
         if ($update) {
 
@@ -240,7 +240,7 @@ class Koleksi extends CI_Controller
     public function updatekoleksssi()
     {
         $this->form_validation->set_rules('nama_koleksi', 'nama koleksi', 'required');
-		$this->form_validation->set_rules('id_ruang_koleksi', 'ID ruang', 'required');
+        $this->form_validation->set_rules('id_ruang_koleksi', 'ID ruang', 'required');
         $this->form_validation->set_rules('panjang_koleksi', 'panjang koleksi', 'required');
         if ($this->form_validation->run() == FALSE) {
             $errors = $this->form_validation->error_array();
@@ -249,22 +249,22 @@ class Koleksi extends CI_Controller
             redirect('Admin');
         } else {
             $nama_koleksi = $this->input->post('nama_koleksi');
-			$id_ruang_koleksi = $this->input->post('id_ruang_koleksi');
+            $id_ruang_koleksi = $this->input->post('id_ruang_koleksi');
             $id = $this->input->post('id_koleksi');
             $panjang_koleksi = $this->input->post('panjang_koleksi');
             $lebar_koleksi = $this->input->post('lebar_koleksi');
             $berat_koleksi = $this->input->post('berat_koleksi');
-			$no_vitrin = $this->input->post('no_vitrin');
+            $no_vitrin = $this->input->post('no_vitrin');
             $tahun_koleksi = $this->input->post('tahun_koleksi');
             $id_users = $this->input->post('id_users');
             //date_default_timezone_set("ASIA/JAKARTA");
             $data = [
                 'nama_koleksi' => $nama_koleksi,
-				'id_ruang_koleksi' => $id_ruang_koleksi,
+                'id_ruang_koleksi' => $id_ruang_koleksi,
                 'panjang_koleksi' => $panjang_koleksi,
                 'lebar_koleksi' => $lebar_koleksi,
                 'berat_koleksi' => $berat_koleksi,
-				'no_vitrin' => $no_vitrin,
+                'no_vitrin' => $no_vitrin,
                 'tahun_koleksi' => $tahun_koleksi,
                 //'time_update_koleksi' => date('Y-m-d H:i:s'),
                 'id_users' => $id_users

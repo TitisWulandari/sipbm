@@ -48,13 +48,12 @@ class Observasi extends CI_Controller
     public function updateObservasi()
     {
 
+        $id = $this->input->post('id_observasi');
         $id_koleksi = $this->input->post('id_koleksi');
-
         $keadaan_observasi_koleksi = $this->input->post('keadaan_observasi_koleksi');
         $time_observasi = $this->input->post('time_observasi');
         $rekomendasi_observasi_koleksi = $this->input->post('rekomendasi_observasi_koleksi');
-        $id_users = $this->input->post('id_users');
-        $id = $this->input->post('id_observasi');
+        // $id_users = $this->input->post('id_users');
 
         $data = [
             'id_koleksi' => $id_koleksi,
@@ -63,7 +62,7 @@ class Observasi extends CI_Controller
             'time_observasi' => $time_observasi,
             'rekomendasi_observasi_koleksi' => $rekomendasi_observasi_koleksi,
             'time_update_observasi' => date('Y-m-d H:i:s'),
-            'id_users' => $id_users
+            'id_users' => $this->session->userdata('id_users')
 
         ];
 

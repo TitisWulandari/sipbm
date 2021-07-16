@@ -10726,7 +10726,7 @@ var core_helpers = function() {
 	};
 	/**
 	 * @private
- 	 */
+ */
 	helpers$1._calculatePadding = function(container, padding, parentDimension) {
 		padding = helpers$1.getStyle(container, padding);
 
@@ -15238,8 +15238,8 @@ var Legend = core_element.extend({
 		me.legendHitBoxes = [];
 
 		/**
- 		 * @private
- 		 */
+	 * @private
+	 */
 		me._hoveredItem = null;
 
 		// Are we in doughnut mode which has a different data type

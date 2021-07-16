@@ -436,7 +436,7 @@ $config['allow_get_array'] = TRUE;
 
 |
 
-| 	array(2) = Debug Messages, without Error Messages
+|array(2) = Debug Messages, without Error Messages
 
 |
 

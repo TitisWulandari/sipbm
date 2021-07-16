@@ -33,16 +33,16 @@
                         <th>No</th>
 
                         <th>Nama Koleksi</th>
-						
-						 <th>Nama Ruang Koleksi</th>
+
+                        <th>Nama Ruang Koleksi</th>
 
                         <th>Panjang</th>
 
                         <th>Lebar</th>
 
                         <th>Berat</th>
-						
-						<th>No. vitrin</th>
+
+                        <th>No. vitrin</th>
 
                         <th>Tahun</th>
 
@@ -54,7 +54,7 @@
 
                 </thead>
 
-                
+
 
                 <tbody>
 
@@ -67,16 +67,16 @@
                             <td><?= $no++ ?></td>
 
                             <td><?= $data->nama_koleksi; ?></td>
-							
-							<td><?= $data->nama_ruang_koleksi; ?></td>
+
+                            <td><?= $data->nama_ruang_koleksi; ?></td>
 
                             <td><?= $data->panjang_koleksi; ?></td>
 
                             <td><?= $data->lebar_koleksi; ?></td>
 
                             <td><?= $data->berat_koleksi; ?></td>
-							
-							<td><?= $data->no_vitrin; ?></td>
+
+                            <td><?= $data->no_vitrin; ?></td>
 
                             <td><?= $data->tahun_koleksi; ?></td>
 
@@ -150,7 +150,7 @@
 
                     </div>
 
-					<div class="form-group">
+                    <div class="form-group">
 
                         <label for="id_ruang_koleksi">Ruang Koleksi</label>
 
@@ -158,7 +158,7 @@
 
                             <?php foreach ($ruang as $id_ruang) : ?>
 
-                                <option value="<?= $id_ruang->nama_ruang_koleksi ?>"><?= $id_ruang->nama_ruang_koleksi ?></option>
+                                <option value="<?= $id_ruang->id_ruang_koleksi ?>"><?= $id_ruang->nama_ruang_koleksi ?></option>
 
                             <?php endforeach ?>
 
@@ -196,16 +196,16 @@
 
 
 
-					
-					<div class="form-group">
+
+                    <div class="form-group">
 
                         <label for="no_vitrin">No. vitrin</label>
 
                         <input type="text" class="form-control" id="no_vitrin" name="no_vitrin" required>
 
                     </div>
-					
-					
+
+
                     <div class="form-group">
 
                         <label for="koleksi_tahun">Koleksi Tahun</label>
@@ -288,7 +288,7 @@
 
                         </div>
 
-						<div class="form-group">
+                        <div class="form-group">
 
                             <label for="email">Nama Ruang Koleksi</label>
 
@@ -319,8 +319,8 @@
                             <input disabled type="text" name="berat_koleksi" value="<?= $data->berat_koleksi; ?>" class="form-control" id="password">
 
                         </div>
-						
-						<div class="form-group">
+
+                        <div class="form-group">
 
                             <label for="password">No. vitrin</label>
 
@@ -424,7 +424,7 @@
 
                             <input type="text" name="nama_koleksi" value="<?= $data->nama_koleksi; ?>" class="form-control" id="nama_koleksi" placeholder="Masukan nama user" required>
 
-                            <input type="text" hidden name="id_koleksi" value="<?= $data->id_koleksi; ?>" class="form-control" id="nama_koleksi" placeholder="Masukan nama user" required>
+                            <input type="text" hidden name="id_koleksi" value="<?= $data->id_koleksi; ?>" class="form-control" id="id_koleksi" placeholder="Masukan nama user" required>
 
                             <input type="text" hidden name="id_users" value="<?= $users['id_users']; ?>" class="form-control" id="nama_koleksi" placeholder="Masukan nama user" required>
 
@@ -432,7 +432,7 @@
 
                         </div>
 
-						<div class="form-group">
+                        <div class="form-group">
 
                             <label for="id_ruang_koleksi">Ruang Koleksi</label>
 
@@ -442,7 +442,7 @@
 
                                 <?php foreach ($ruang as $id_ruang) : ?>
 
-                                    <option value="<?= $id_ruang->nama_ruang_koleksi ?>"><?= $id_ruang->nama_ruang_koleksi ?></option>
+                                    <option value="<?= $id_ruang->id_ruang_koleksi ?>"><?= $id_ruang->nama_ruang_koleksi ?></option>
 
                                 <?php endforeach ?>
 
@@ -473,8 +473,8 @@
                             <input type="text" name="berat_koleksi" value="<?= $data->berat_koleksi; ?>" class="form-control" id="berat_koleksi" required>
 
                         </div>
-						
-						<div class="form-group">
+
+                        <div class="form-group">
 
                             <label for="email">No. vitrin</label>
 

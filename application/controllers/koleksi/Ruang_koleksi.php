@@ -199,7 +199,7 @@ class Ruang_koleksi extends CI_Controller
                     'panjang_koleksi'        => $this->input->post('panjang_koleksi'),
                     'lebar_koleksi'        => $this->input->post('lebar_koleksi'),
                     'berat_koleksi'        => $this->input->post('berat_koleksi'),
-					'no_vitrin'        		=> $this->input->post('no_vitrin'),
+					'no_vitrin'      => $this->input->post('no_vitrin'),
                     'tahun_koleksi'        => $this->input->post('tahun_koleksi'),
                     'time_create_koleksi'    => date('Y-m-d H:i:s'),
                     'gambar_koleksi'        => $upload_data['uploads']['file_name'],

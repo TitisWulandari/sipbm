@@ -8,24 +8,25 @@ class Observasi_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('tbl_observasi');
-        $this->db->join('tbl_koleksi', 'tbl_koleksi.id_koleksi = tbl_observasi.id_koleksi');
-       
-        $this->db->join('tbl_users', 'tbl_users.id_users = tbl_observasi.id_users');
+        $this->db->join('tbl_koleksi', 'tbl_koleksi.id_koleksi = tbl_observasi.id_koleksi', 'left');
 
+        $this->db->join('tbl_users', 'tbl_users.id_users = tbl_observasi.id_users', 'left');
+
+        $this->db->order_by('tbl_observasi.id_observasi', 'desc');
         $result = $this->db->get();
 
         return $result->result();
     }
 
-    public function getbytgl($tgl_awal,$tgl_akhir)
+    public function getbytgl($tgl_awal, $tgl_akhir)
     {
         $this->db->select('*');
         $this->db->from('tbl_observasi');
         $this->db->join('tbl_koleksi', 'tbl_koleksi.id_koleksi = tbl_observasi.id_koleksi');
-     
+
         $this->db->join('tbl_users', 'tbl_users.id_users = tbl_observasi.id_users');
-        $this->db->where('time_observasi >=',$tgl_awal);
-        $this->db->where('time_observasi <=',$tgl_akhir);
+        $this->db->where('time_observasi >=', $tgl_awal);
+        $this->db->where('time_observasi <=', $tgl_akhir);
 
         $result = $this->db->get();
 
@@ -50,7 +51,7 @@ class Observasi_model extends CI_Model
         INNER JOIN `tbl_koleksi` ON `tbl_observasi`.`id_koleksi` = `tbl_koleksi`.`id_koleksi`
         INNER JOIN `tbl_users` ON `tbl_observasi`.`id_users` = `tbl_users`.`id_users`
         WHERE `time_observasi` BETWEEN $dari AND $sampai";
-        
+
         return $this->db->query($query)->result_array();
     }
 

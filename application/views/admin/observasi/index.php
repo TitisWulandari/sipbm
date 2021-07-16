@@ -28,7 +28,7 @@
                         <th>Aksi</th>
                     </tr>
                 </thead>
-                
+
                 <tbody>
                     <?php $no = 1;
                     foreach ($observasi as $data) : ?>
@@ -88,7 +88,7 @@
                         <select name="rekomendasi_observasi_koleksi" class="form-control" required>
                             <option value="perawatan">Perawatan</option>
                             <option value="belum_rekomendasi">Belum Rekomendasi</option>
-                     
+
                         </select>
                     </div>
                 </div>
@@ -120,24 +120,24 @@
                         <div class="form-group">
                             <label for="nama">Nama</label>
                             <input type="text" name="name" value="<?= $data->nama_koleksi; ?>" class="form-control" id="nama" placeholder="Masukan nama user">
-                        </div>                        
-						
+                        </div>
+
                         <div class="form-group">
                             <label for="password">Keadaan</label>
                             <input type="text" name="keadaan_observasi_koleksi" value="<?= $data->keadaan_observasi_koleksi; ?>" class="form-control" id="password" placeholder="Masukan password user">
                         </div>
-						
+
 
                         <div class="form-group">
                             <label for="password">Tanggal Observasi</label>
                             <input type="text" value="<?= $data->time_observasi; ?>" class="form-control" id="password" placeholder="Masukan password user">
                         </div>
 
-						<div class="form-group">
+                        <div class="form-group">
                             <label for="password">Rekomendasi</label>
                             <input type="text" name="rekomendasi_observasi_koleksi" value="<?= $data->rekomendasi_observasi_koleksi; ?>" class="form-control" id="password" placeholder="Masukan password user">
                         </div>
-						
+
                         <div class="form-group">
                             <label for="password">Dibuat oleh <?= $data->level; ?></label>
                             <input type="text" value="<?= $data->name; ?>" class="form-control" id="password" placeholder="Masukan password user">
@@ -187,6 +187,7 @@
                             <div class="form-group">
                                 <label for="keadaan_observasi_koleksi">Keadaan Koleksi</label>
                                 <input type="text" class="form-control" value="<?= $dataob->keadaan_observasi_koleksi; ?>" name="keadaan_observasi_koleksi">
+                                <input type="text" hidden class="form-control" value="<?= $dataob->id_observasi; ?>" name="id_observasi">
                             </div>
 
                             <div class="form-group">
@@ -200,7 +201,7 @@
                                     <option value="<?= $dataob->rekomendasi_observasi_koleksi ?>"><?= $dataob->rekomendasi_observasi_koleksi ?></option>
                                     <option value="perawatan">Perawatan</option>
                                     <option value="belum_rekomendasi">Belum Rekomendasi</option>
-                                    
+
                                 </select>
                             </div>
                         </div>
@@ -212,7 +213,7 @@
                 </div>
             </div>
         </div>
-		</div>
+    </div>
 <?php endforeach ?>
 <!-- end Modal Edit Users -->
 
@@ -242,5 +243,5 @@
                 </div>
             </div>
         </div>
-		</div>
+    </div>
 <?php endforeach ?>

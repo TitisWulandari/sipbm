@@ -34,7 +34,7 @@
                         <th>Kondisi Kerusakan</th>
                         <th>Bukti Kerusakan</th>
                         <th>Status</th>
-                        <!--<th>Aksi</th> -->
+                        <th>Aksi</th>
                     </tr>
                 </thead>
 
@@ -44,7 +44,7 @@
                     <?php foreach ($pemeriksaan as $per) : ?>
                         <tr>
                             <td><?= $no++ ?></td>
-                            <td><?= $per->nama_koleksi ?></td>
+                            <td><?= $per->name ?></td>
 
                             <td><?= $per->nama_koleksi; ?></td>
                             <td><?= $per->kondisi_kerusakan; ?></td>
@@ -66,8 +66,8 @@
                                     <?php } ?>
                                 </div>
                             </td>
-                            <!--
-							<td>
+
+                            <td>
 
                                 <a href="" data-toggle="modal" data-target="#ModalEdit<?= $per->id_pemeriksaan; ?>" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
 
@@ -78,7 +78,7 @@
                                 <a href="" data-toggle="modal" data-target="#ModalHapus<?= $per->id_pemeriksaan; ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
 
                             </td>
-							-->
+
 
                         </tr>
                     <?php endforeach; ?>
@@ -271,15 +271,23 @@
 
                         <div class="form-group">
 
-                            <label for="nama">Nama Koleksi</label>
+                            <!-- <label for="nama">Nama Koleksi</label> -->
 
-                            <input type="text" name="id_koleksi" value="<?= $per->nama_koleksi; ?>" class="form-control" id="id_koleksi" placeholder="Masukan nama user" required>
+                            <!-- <input type="text" name="id_koleksi" value="<?= $per->nama_koleksi; ?>" class="form-control" id="id_koleksi" placeholder="Masukan nama user" required> -->
 
-                            <input type="text" hidden name="id_pemeriksaan" value="<?= $per->id_pemeriksaan; ?>" class="form-control" id="nama_koleksi" placeholder="Masukan nama user" required>
+                            <input type="text" hidden name="id_pemeriksaan" value="<?= $per->id_pemeriksaan; ?>" class="form-control" id="id_pemeriksaan" placeholder="Masukan nama user" required>
 
-                            <input type="text" hidden name="id_users" value="<?= $users['id_users']; ?>" class="form-control" id="nama_koleksi" placeholder="Masukan nama user" required>
+                            <input type="text" hidden name="id_users" value="<?= $users['id_users']; ?>" class="form-control" id="id_users" placeholder="Masukan nama user" required>
 
-
+                            <div class="form-group">
+                                <label for="id_koleksi">Nama koleksi</label>
+                                <select class="form-control" id="id_koleksi" name="id_koleksi" required>
+                                    <option value="<?= $per->id_koleksi ?>"><?= $per->nama_koleksi ?></option>
+                                    <?php foreach ($collections as $collection) : ?>
+                                        <option value="<?= $collection['id_koleksi'] ?>"><?= $collection['nama_koleksi'] ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
 
                         </div>
 
@@ -288,8 +296,9 @@
                         <div class="form-group">
 
                             <label for="email">Kondisi Kerusakan</label>
+                            <textarea class="form-control" name="kondisi_kerusakan"><?= $per->kondisi_kerusakan; ?></textarea>
 
-                            <input type="text" name="kondisi_kerusakan" value="<?= $per->kondisi_kerusakan; ?>" class="form-control" id="berat_koleksi" required>
+                            <!-- <input type="text" name="kondisi_kerusakan" value="<?= $per->kondisi_kerusakan; ?>" class="form-control" id="berat_koleksi" required> -->
 
                         </div>
 
@@ -361,7 +370,7 @@
 
                         <div class="form-group">
 
-                            <img height="20" class="img-thumbnail" src="<?= base_url('assets/upload/post/thumbs/' . $data->gambar_kerusakan) ?>">
+                            <img height="20" class="img-thumbnail" src="<?= base_url('assets/upload/pemeriksaan/thumbs/' . $per->gambar_kerusakan) ?>">
 
                         </div>
 
@@ -449,7 +458,7 @@
 
                         <button type="button" class="btn btn-warning" data-dismiss="modal">Tutup</button>
 
-                        <a class="btn btn-danger" href="<?= base_url('Admin/deletePemeriksaan/' . $per->id_pemeriksaan) ?>">YAKIN !</a>
+                        <a class="btn btn-danger" href="<?= base_url('petugas/pemeriksaan/pemeriksaan/delete/' . $per->id_pemeriksaan) ?>">YAKIN !</a>
 
                     </div>
 
