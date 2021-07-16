@@ -438,7 +438,7 @@
 
                             <select name="id_ruang_koleksi" class="form-control" required>
 
-                                <option value="<?= $data->nama_ruang_koleksi; ?>"><?= $data->nama_ruang_koleksi; ?></option>
+                                <option value="<?= $data->id_ruang_koleksi; ?>"><?= $data->nama_ruang_koleksi; ?></option>
 
                                 <?php foreach ($ruang as $id_ruang) : ?>
 
